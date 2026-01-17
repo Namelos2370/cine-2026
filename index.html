@@ -3,273 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>St-Valentin Sous Les Étoiles 2026</title>
-    
-    <meta property="og:title" content="St-Valentin 2026 x BLUE ENERGY ⚡">
-    <meta property="og:description" content="L'événement romantique de l'année. Propulsé par Blue Energy.">
-    <meta property="og:image" content="https://blue-energy-store.vercel.app/logo.png"> 
-
+    <title>Ciné Sous Les Étoiles - St Valentin 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .hero-bg { background-image: url('https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
-        .selected-card { border-color: #ec4899; background: rgba(236, 72, 153, 0.1); }
-        .timer-box { background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(5px); }
-        .blue-glow { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); border: 1px solid rgba(59, 130, 246, 0.5); }
+        /* Animation personnalisée */
+        @keyframes pulse-red {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+        }
+        .animate-pulse-red {
+            animation: pulse-red 2s infinite;
+        }
     </style>
 </head>
-<body class="bg-slate-950 text-white min-h-screen">
+<body class="bg-slate-950 text-white font-sans selection:bg-pink-500 selection:text-white">
 
-    <div class="bg-blue-950 text-blue-200 text-xs font-bold text-center py-3 border-b border-blue-900 flex items-center justify-center gap-2 relative z-50">
+    <div class="bg-blue-950 text-blue-200 text-xs font-bold text-center py-3 border-b border-blue-900 flex items-center justify-center gap-2 sticky top-0 z-50">
         <i data-lucide="zap" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
         <span>Événement propulsé par <span class="text-white uppercase tracking-widest font-extrabold">BLUE ENERGY</span></span>
     </div>
 
-    <header class="hero-bg min-h-[75vh] relative flex flex-col items-center justify-center text-center px-4 pb-10">
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-purple-900/40"></div>
-        <div class="relative z-10 max-w-4xl w-full">
-            <div class="flex items-center justify-center gap-2 mb-6">
+    <header class="relative min-h-[75vh] flex flex-col items-center justify-center text-center px-4 pb-10 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?q=80&w=2070&auto=format&fit=crop" alt="Cinema Background" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-purple-900/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl w-full mt-10 flex flex-col items-center">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-3 mb-6">
+                <span class="bg-red-600 border border-red-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest flex items-center gap-2 animate-pulse-red">
+                    <i data-lucide="alert-triangle" class="w-3 h-3"></i> Places très limitées
+                </span>
                 <span class="bg-pink-600/20 border border-pink-500 text-pink-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-2">
                     <i data-lucide="sparkles" class="w-3 h-3"></i> 14 Février 2026
                 </span>
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">L'Amour sous <br/><span class="text-pink-500">les Étoiles</span></h1>
             
-            <div class="flex justify-center gap-3 md:gap-6 my-8 text-center">
-                <div class="timer-box p-3 rounded-xl w-20">
-                    <div id="d" class="text-2xl md:text-3xl font-bold text-pink-500">00</div>
-                    <div class="text-[10px] uppercase tracking-wide text-gray-400">Jours</div>
-                </div>
-                <div class="timer-box p-3 rounded-xl w-20">
-                    <div id="h" class="text-2xl md:text-3xl font-bold text-white">00</div>
-                    <div class="text-[10px] uppercase tracking-wide text-gray-400">Heures</div>
-                </div>
-                <div class="timer-box p-3 rounded-xl w-20">
-                    <div id="m" class="text-2xl md:text-3xl font-bold text-white">00</div>
-                    <div class="text-[10px] uppercase tracking-wide text-gray-400">Min</div>
-                </div>
-                <div class="timer-box p-3 rounded-xl w-20">
-                    <div id="s" class="text-2xl md:text-3xl font-bold text-white">00</div>
-                    <div class="text-[10px] uppercase tracking-wide text-gray-400">Sec</div>
-                </div>
-            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+                L'Amour sous <br/><span class="text-pink-500">les Étoiles</span>
+            </h1>
+            
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-6">
+                L'événement exclusif de la Saint-Valentin. <br/>
+                <span class="text-yellow-400 font-bold">Réservez maintenant pour garantir votre place. Paiement plus tard.</span>
+            </p>
 
-            <a href="#reservation" class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-600 to-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-pink-500/30 animate-bounce">
-                <span>Réserver ma place</span>
+            <div class="flex justify-center gap-3 md:gap-6 my-8 text-center" id="countdown">
+                </div>
+
+            <a href="#reservation" class="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-white/10 animate-bounce">
+                <span>Bloquer ma place (Urgent)</span>
                 <i data-lucide="arrow-down" class="w-5 h-5"></i>
             </a>
         </div>
     </header>
 
     <section class="py-12 bg-slate-900 border-y border-blue-900/30 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-        <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
-            <div class="w-full md:w-1/3 bg-slate-800/80 p-8 rounded-2xl blue-glow text-center transform hover:scale-105 transition-transform duration-300">
-                <img src="logo.jpeg" alt="Blue Energy Logo" class="w-32 h-32 object-contain mx-auto mb-4 rounded-full bg-white p-2">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10 relative z-10">
+            <div class="w-full md:w-1/3 bg-slate-800/80 p-8 rounded-2xl border border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.3)] text-center">
+                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-white p-2 overflow-hidden flex items-center justify-center">
+                    <img src="./logo.jpeg" alt="Blue Energy" class="w-full h-full object-contain">
+                </div>
                 <h3 class="font-extrabold text-2xl tracking-tight text-white">BLUE ENERGY</h3>
                 <p class="text-blue-400 text-xs font-bold uppercase tracking-widest mt-1">Sponsor Officiel</p>
             </div>
             <div class="flex-1 text-center md:text-left">
-                <div class="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 animate-pulse">
-                    ⚡ CONCOURS "BEST LOOK"
-                </div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">L'élégance récompensée</h2>
-                <p class="text-gray-300 mb-6 text-lg leading-relaxed">
-                    Le couple le mieux habillé de la soirée remportera 
-                    <strong class="text-blue-400 block text-xl mt-2">✨ UNE RÉDUCTION DE 10% ✨</strong>
-                    sur toute la boutique Blue Energy.
-                </p>
-                <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-                    <a href="https://blue-energy-store.vercel.app" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white text-blue-900 px-6 py-3 rounded-xl font-bold hover:bg-blue-50 transition-colors">
-                        <span>Voir la collection</span>
-                        <i data-lucide="external-link" class="w-4 h-4"></i>
-                    </a>
-                </div>
+                <p class="text-gray-300 mb-6 text-lg">Le couple le mieux habillé remportera <strong class="text-blue-400">10% de réduction</strong>.</p>
+                <a href="https://blue-energy-store.vercel.app" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white text-blue-900 px-6 py-3 rounded-xl font-bold hover:bg-blue-50 transition-colors">
+                    <span>Voir la collection</span>
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <section id="reservation" class="py-16 bg-slate-900 relative">
         <div class="max-w-3xl mx-auto px-4 relative z-10">
-            <h2 class="text-3xl font-bold text-center mb-2">Réservation</h2>
-            <div class="bg-slate-800 p-6 md:p-8 rounded-3xl shadow-2xl border border-slate-700 mt-8">
+            
+            <div class="bg-red-500/10 border border-red-500/50 rounded-2xl p-4 mb-8 flex items-start gap-4 animate-pulse">
+                <i data-lucide="alert-triangle" class="w-6 h-6 text-red-500 shrink-0 mt-1"></i>
+                <div>
+                    <h3 class="font-bold text-red-400">Disponibilité critique</h3>
+                    <p class="text-sm text-gray-300">Forte demande. Réservez maintenant, payez plus tard.</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 p-6 md:p-8 rounded-3xl shadow-2xl border border-slate-700">
                 
-                <div class="space-y-4 mb-8">
-                    <label class="flex items-center gap-2 text-sm font-bold text-gray-400 uppercase"><i data-lucide="user-check" class="w-4 h-4"></i> Vos Coordonnées</label>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <input type="text" id="nom" placeholder="Votre Nom complet" class="w-full bg-slate-900 border border-slate-600 rounded-xl p-4 focus:border-pink-500 outline-none">
-                        <input type="text" id="tel" placeholder="Numéro WhatsApp" class="w-full bg-slate-900 border border-slate-600 rounded-xl p-4 focus:border-pink-500 outline-none">
-                    </div>
-                    <input type="email" id="email" placeholder="Votre Email" class="w-full bg-slate-900 border border-slate-600 rounded-xl p-4 focus:border-pink-500 outline-none">
-                    
-                    <div class="bg-pink-900/20 border border-pink-500/30 p-4 rounded-xl mt-4">
-                        <label class="flex items-center gap-2 text-sm font-bold text-pink-400 uppercase mb-2">
-                            <i data-lucide="music" class="w-4 h-4"></i> Dédicace Spéciale (Optionnel)
+                <form id="bookingForm" class="space-y-6">
+                    <div class="space-y-4">
+                        <label class="flex items-center gap-2 text-sm font-bold text-gray-400 uppercase">
+                            <i data-lucide="user" class="w-4 h-4"></i> Vos Coordonnées
                         </label>
-                        <input type="text" id="chanson" placeholder="Ex: Ed Sheeran - Perfect" class="w-full bg-slate-900 border border-slate-600 rounded-lg p-3 text-sm focus:border-pink-500 outline-none">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" id="nom" placeholder="Votre Nom complet" required
+                                class="w-full bg-slate-900 border border-slate-600 rounded-xl p-4 focus:border-pink-500 outline-none">
+                            <input type="text" id="tel" placeholder="Numéro WhatsApp (Important)" required
+                                class="w-full bg-slate-900 border border-slate-600 rounded-xl p-4 focus:border-pink-500 outline-none">
+                        </div>
+                        <input type="email" id="email" placeholder="Email (Optionnel)"
+                            class="w-full bg-slate-900 border border-slate-600 rounded-xl p-4 focus:border-pink-500 outline-none">
                     </div>
-                </div>
 
-                <div class="space-y-4 mb-8">
-                    <label class="flex items-center gap-2 text-sm font-bold text-gray-400 uppercase"><i data-lucide="ticket" class="w-4 h-4"></i> Sélectionnez une offre</label>
-                    
-                    <div onclick="selectPack('solo', 1000)" id="card-solo" class="pack-card cursor-pointer border-2 border-slate-600 rounded-xl p-4 hover:bg-slate-700/50 transition-all flex justify-between items-center">
-                        <div><h3 class="font-bold text-lg">Pack SOLO</h3><p class="text-xs text-gray-400">1 Entrée + Popcorn</p></div>
-                        <div class="text-xl font-bold text-pink-400">1 000 F</div>
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-600">
+                        <label class="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase mb-3">
+                            <i data-lucide="car" class="w-4 h-4"></i> Transport (Pour le parking)
+                        </label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center gap-2 cursor-pointer text-gray-300">
+                                <input type="radio" name="transport" value="VOITURE" class="accent-pink-500 w-4 h-4">
+                                <span>En Voiture</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer text-gray-300">
+                                <input type="radio" name="transport" value="TAXI" checked class="accent-pink-500 w-4 h-4">
+                                <span>Taxi / Dépose</span>
+                            </label>
+                        </div>
                     </div>
-                    <div onclick="selectPack('couple', 5000)" id="card-couple" class="pack-card cursor-pointer border-2 border-slate-600 rounded-xl p-4 hover:bg-slate-700/50 transition-all flex justify-between items-center">
-                        <div><h3 class="font-bold text-lg text-pink-200">Pack COUPLE ❤️</h3><p class="text-xs text-gray-400">2 Entrées + Rose + Coupes + Popcorn</p></div>
-                        <div class="text-xl font-bold text-pink-400">5 000 F</div>
-                    </div>
-                    <div onclick="selectPack('famille', 8000)" id="card-famille" class="pack-card cursor-pointer border-2 border-slate-600 rounded-xl p-4 hover:bg-slate-700/50 transition-all flex justify-between items-center">
-                        <div><h3 class="font-bold text-lg">Pack FAMILLE</h3><p class="text-xs text-gray-400">5 Entrées + Boissons</p></div>
-                        <div class="text-xl font-bold text-pink-400">8 000 F</div>
-                    </div>
-                </div>
 
-                <div id="family-inputs" class="hidden mb-8 bg-slate-900/50 p-6 rounded-xl border border-slate-600">
-                    <h4 class="font-bold text-amber-400 mb-4 text-sm uppercase">Noms des autres invités</h4>
-                    <div class="grid gap-3">
-                        <input type="text" id="guest1" placeholder="Invité 1" class="w-full bg-slate-800 rounded-lg p-3 text-sm border border-slate-700">
-                        <input type="text" id="guest2" placeholder="Invité 2" class="w-full bg-slate-800 rounded-lg p-3 text-sm border border-slate-700">
-                        <input type="text" id="guest3" placeholder="Invité 3" class="w-full bg-slate-800 rounded-lg p-3 text-sm border border-slate-700">
-                        <input type="text" id="guest4" placeholder="Invité 4" class="w-full bg-slate-800 rounded-lg p-3 text-sm border border-slate-700">
+                    <div class="space-y-4">
+                        <label class="flex items-center gap-2 text-sm font-bold text-gray-400 uppercase">
+                            <i data-lucide="ticket" class="w-4 h-4"></i> Choisissez votre formule
+                        </label>
+                        
+                        <div onclick="selectPack('SOLO', 1000)" id="pack-SOLO"
+                             class="pack-item cursor-pointer border-2 border-slate-600 rounded-xl p-4 hover:bg-slate-700/50 transition-all flex justify-between items-center">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-slate-700 p-3 rounded-full"><i data-lucide="user" class="w-6 h-6 text-gray-300"></i></div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Pack SOLO</h3>
+                                    <p class="text-xs text-gray-400 mt-1">1 Entrée + Popcorn</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xl font-bold text-pink-400">1 000 FCFA</div>
+                                <div class="text-[10px] text-gray-400">Payable plus tard</div>
+                            </div>
+                        </div>
+
+                        <div onclick="selectPack('COUPLE', 2500)" id="pack-COUPLE"
+                             class="pack-item cursor-pointer border-2 border-slate-600 rounded-xl p-4 hover:bg-slate-700/50 transition-all flex justify-between items-center">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-pink-900/50 p-3 rounded-full"><i data-lucide="heart" class="w-6 h-6 text-pink-500"></i></div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-pink-200">Pack COUPLE ❤️</h3>
+                                    <p class="text-xs text-gray-400 mt-1">2 Entrées + Rose + Popcorn</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xl font-bold text-pink-400">2 500 FCFA</div>
+                                <div class="text-[10px] text-gray-400">Payable plus tard</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <button onclick="validerEtEnvoyer()" id="btn-submit" class="w-full py-5 bg-gradient-to-r from-pink-600 to-purple-600 hover:brightness-110 rounded-xl font-bold text-xl shadow-lg opacity-50 cursor-not-allowed flex items-center justify-center gap-3" disabled>
-                    <span>Valider la réservation</span>
-                    <i data-lucide="send" class="w-5 h-5"></i>
-                </button>
-            </div>
-        </div>
-    </section>
+                    <button type="button" onclick="submitForm()" 
+                        class="w-full py-5 bg-gradient-to-r from-pink-600 to-purple-600 hover:brightness-110 rounded-xl font-bold text-xl shadow-lg flex items-center justify-center gap-3 transition-all">
+                        <span>Bloquer ma place (Places limitées)</span>
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                    </button>
+                </form>
 
-    <section class="py-16 px-4 max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-10 flex items-center justify-center gap-2">
-            <i data-lucide="help-circle" class="text-pink-500"></i> Questions Fréquentes
-        </h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="glass p-6 rounded-2xl border border-slate-800">
-                <h3 class="font-bold text-pink-400 flex items-center gap-2 mb-2"><i data-lucide="shield-check" class="w-5 h-5"></i> Sécurité ?</h3>
-                <p class="text-gray-400 text-sm">Une équipe de sécurité privée est présente. Chacun reste responsable de ses biens.</p>
-            </div>
-            <div class="glass p-6 rounded-2xl border border-slate-800">
-                <h3 class="font-bold text-pink-400 flex items-center gap-2 mb-2"><i data-lucide="coffee" class="w-5 h-5"></i> Nourriture ?</h3>
-                <p class="text-gray-400 text-sm">Vente sur place à prix doux pour soutenir l'événement ! (Eau autorisée).</p>
-            </div>
-            <div class="glass p-6 rounded-2xl border border-slate-800">
-                <h3 class="font-bold text-pink-400 flex items-center gap-2 mb-2"><i data-lucide="cloud-sun" class="w-5 h-5"></i> Météo ?</h3>
-                <p class="text-gray-400 text-sm">Février est la saison sèche. Prévoyez un pull pour le soir, c'est plein air !</p>
-            </div>
-            <div class="glass p-6 rounded-2xl border border-slate-800">
-                <h3 class="font-bold text-pink-400 flex items-center gap-2 mb-2"><i data-lucide="car" class="w-5 h-5"></i> Parking ?</h3>
-                <p class="text-gray-400 text-sm">Places disponibles autour du Jardin Public (stationnement à vos risques).</p>
             </div>
         </div>
     </section>
 
     <footer class="py-10 text-center text-gray-600 text-sm border-t border-slate-900 bg-slate-950">
-        <div class="flex flex-col items-center justify-center gap-3 mb-4">
-             <div class="flex items-center gap-2">
-                 <i data-lucide="clapperboard" class="w-5 h-5 text-pink-500"></i>
-                 <span class="font-bold text-gray-400">Ciné Sous Les Étoiles 2026</span>
-             </div>
-             <a href="https://blue-energy-store.vercel.app" target="_blank" class="flex items-center gap-2 px-3 py-1 bg-blue-900/30 rounded-full border border-blue-900/50 hover:bg-blue-900/50 transition-colors">
-                 <span class="text-xs text-blue-400">Sponsorisé par</span>
-                 <span class="font-bold text-white uppercase text-xs">BLUE ENERGY</span>
-             </a>
-        </div>
-        <p>Yaoundé • Cameroun</p>
+        <p>Yaoundé • Cameroun • St Valentin 2026</p>
     </footer>
 
-    <div id="popup" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4">
+    <div id="successPopup" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 hidden">
         <div class="bg-white text-slate-900 rounded-2xl max-w-md w-full p-8 text-center shadow-2xl relative">
-            <h3 class="text-2xl font-bold mb-2">C'est presque fini !</h3>
-            <p class="text-gray-600 mb-4 text-sm">Référence :</p>
-            <div id="ref-display" class="bg-slate-100 p-3 rounded-xl font-mono text-2xl font-bold text-slate-800 mb-6">RES-....</div>
-            <a id="wa-link" href="#" target="_blank" class="block w-full py-4 bg-[#25D366] text-white rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:scale-105 transition-transform">
-                <i data-lucide="message-circle" class="w-6 h-6"></i> Confirmer sur WhatsApp
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="check-circle" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Place Bloquée !</h3>
+            <p class="text-gray-600 mb-4 text-sm">Votre référence :</p>
+            <div id="refDisplay" class="bg-slate-100 p-3 rounded-xl font-mono text-2xl font-bold text-slate-800 mb-6">...</div>
+            
+            <div class="bg-amber-50 border border-amber-200 p-3 rounded-lg text-amber-800 text-xs text-left mb-6">
+                <strong>⚠️ DERNIÈRE ÉTAPE :</strong><br/>
+                Envoyez cette référence sur WhatsApp maintenant pour valider votre inscription.
+            </div>
+
+            <a id="waButton" href="#" target="_blank" class="block w-full py-4 bg-[#25D366] text-white rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:scale-105 transition-transform animate-bounce">
+                <i data-lucide="message-circle" class="w-6 h-6"></i> Envoyer à l'Admin
             </a>
-            <button onclick="document.getElementById('popup').classList.add('hidden')" class="mt-4 text-gray-400 text-xs underline">Fermer</button>
+            <button onclick="document.getElementById('successPopup').classList.add('hidden')" class="mt-4 text-gray-400 text-xs underline">Fermer</button>
         </div>
     </div>
 
     <script>
+        // Initialisation des icônes
         lucide.createIcons();
-        let selectedPack = null;
-        let selectedPrice = 0;
-        const ADMIN_NUM = "237658980051"; 
 
-        // Compte à rebours
-        const eventDate = new Date("Feb 14, 2026 18:00:00").getTime();
-        setInterval(function() {
-            const now = new Date().getTime();
-            const distance = eventDate - now;
-            document.getElementById("d").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("h").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("m").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("s").innerText = Math.floor((distance % (1000 * 60)) / 1000);
-        }, 1000);
+        // Gestion de la sélection de Pack
+        let currentPack = null;
+        let currentPrice = 0;
 
-        function selectPack(packName, price) {
-            selectedPack = packName;
-            selectedPrice = price;
-            document.querySelectorAll('.pack-card').forEach(el => {
-                el.classList.remove('selected-card', 'border-pink-500');
+        function selectPack(pack, price) {
+            currentPack = pack;
+            currentPrice = price;
+            
+            // Reset styles
+            document.querySelectorAll('.pack-item').forEach(el => {
+                el.classList.remove('border-pink-500', 'bg-pink-500/10');
                 el.classList.add('border-slate-600');
             });
-            document.getElementById('card-' + packName).classList.add('selected-card', 'border-pink-500');
-            
-            const famInputs = document.getElementById('family-inputs');
-            if (packName === 'famille') famInputs.classList.remove('hidden');
-            else famInputs.classList.add('hidden');
 
-            const btn = document.getElementById('btn-submit');
-            btn.disabled = false;
-            btn.classList.remove('opacity-50', 'cursor-not-allowed');
-            btn.querySelector('span').innerText = `Valider (${price.toLocaleString()} FCFA)`;
+            // Active style
+            const selected = document.getElementById('pack-' + pack);
+            selected.classList.remove('border-slate-600');
+            selected.classList.add('border-pink-500', 'bg-pink-500/10');
         }
 
-        // FONCTION MODIFIÉE POUR VERCEL (Génération ID locale)
-        function validerEtEnvoyer() {
+        // Envoi du formulaire
+        function submitForm() {
             const nom = document.getElementById('nom').value;
             const tel = document.getElementById('tel').value;
             const email = document.getElementById('email').value;
-            const chanson = document.getElementById('chanson').value;
+            const transport = document.querySelector('input[name="transport"]:checked').value;
 
-            if (!nom || !tel || !selectedPack) { alert("Champs obligatoires manquants"); return; }
-
-            let invites = "";
-            if (selectedPack === 'famille') {
-                const g1 = document.getElementById('guest1').value;
-                const g2 = document.getElementById('guest2').value;
-                const g3 = document.getElementById('guest3').value;
-                const g4 = document.getElementById('guest4').value;
-                invites = `${g1}, ${g2}, ${g3}, ${g4}`;
+            if (!nom || !tel || !currentPack) {
+                alert("⚠️ Merci de remplir votre Nom, Numéro et de choisir un Pack !");
+                return;
             }
 
-            // Génération ID Aléatoire (ex: RES-8F3A)
-            const randomID = "RES-" + Math.random().toString(36).substr(2, 4).toUpperCase();
-
-            document.getElementById('ref-display').innerText = randomID;
+            // Générer ID
+            const refID = "RES-" + Math.random().toString(36).substr(2, 5).toUpperCase();
             
-            let msg = `*NOUVELLE RÉSERVATION : ${randomID}*\n------------------\n`;
-            msg += `👤 Nom: ${nom}\n`;
-            msg += `📞 Tel: ${tel}\n`;
-            msg += `📧 Email: ${email}\n`;
-            msg += `🎟️ Pack: ${selectedPack.toUpperCase()}\n`;
-            if(invites) msg += `👨‍👩‍👧‍👦 Invités: ${invites}\n`;
-            if(chanson) msg += `🎵 Son: ${chanson}\n`;
-            msg += `💰 Montant: ${selectedPrice} FCFA\n`;
-            msg += `------------------\n_(Je souhaite payer par Mobile Money)_`;
+            // Préparer lien WhatsApp
+            const ADMIN_NUM = "237658980051"; 
+            let msg = `*🚨 NOUVELLE RÉSERVATION (À RELANCER)*\n`;
+            msg += `-----------------------------\n`;
+            msg += `📝 *REF:* ${refID}\n`;
+            msg += `👤 *Nom:* ${nom}\n`;
+            msg += `📞 *Tel:* ${tel}\n`;
+            msg += `🎟️ *Pack:* ${currentPack}\n`;
+            msg += `💰 *Montant:* ${currentPrice} FCFA (Non payé)\n`;
+            msg += `🚗 *Transport:* ${transport}\n`;
+            msg += `-----------------------------\n`;
+            msg += `Client en attente de validation.`;
 
-            document.getElementById('wa-link').href = `https://wa.me/${ADMIN_NUM}?text=${encodeURIComponent(msg)}`;
-            document.getElementById('popup').classList.remove('hidden');
+            const link = `https://wa.me/${ADMIN_NUM}?text=${encodeURIComponent(msg)}`;
+
+            // Afficher Popup
+            document.getElementById('refDisplay').innerText = refID;
+            document.getElementById('waButton').href = link;
+            document.getElementById('successPopup').classList.remove('hidden');
         }
+
+        // Timer Compte à rebours
+        const eventDate = new Date("Feb 14, 2026 18:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            
+            const html = `
+                <div class="bg-slate-900/60 border border-white/10 backdrop-blur-sm p-3 rounded-xl w-20">
+                    <div class="text-2xl md:text-3xl font-bold text-pink-500">${days}</div>
+                    <div class="text-[10px] uppercase text-gray-400">Jours</div>
+                </div>
+                <div class="bg-slate-900/60 border border-white/10 backdrop-blur-sm p-3 rounded-xl w-20">
+                    <div class="text-2xl md:text-3xl font-bold text-pink-500">${hours}</div>
+                    <div class="text-[10px] uppercase text-gray-400">Heures</div>
+                </div>
+            `;
+            document.getElementById('countdown').innerHTML = html;
+        }, 1000);
     </script>
 </body>
 </html>
