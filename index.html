@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +7,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Animation personnalisée */
         @keyframes pulse-red {
             0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
         }
         .animate-pulse-red {
             animation: pulse-red 2s infinite;
+        }
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
@@ -24,19 +29,19 @@
         <span>Événement propulsé par <span class="text-white uppercase tracking-widest font-extrabold">BLUE ENERGY</span></span>
     </div>
 
-    <header class="relative min-h-[75vh] flex flex-col items-center justify-center text-center px-4 pb-10 overflow-hidden">
+    <header class="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-4 pb-10 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?q=80&w=2070&auto=format&fit=crop" alt="Cinema Background" class="w-full h-full object-cover opacity-40">
+            <img src="https://images.unsplash.com/photo-1517604931442-71053e3e2c3c?q=80&w=2070&auto=format&fit=crop" alt="Cinema Background" class="w-full h-full object-cover opacity-40">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-purple-900/40"></div>
         </div>
 
         <div class="relative z-10 max-w-4xl w-full mt-10 flex flex-col items-center">
             <div class="flex flex-col md:flex-row items-center justify-center gap-3 mb-6">
                 <span class="bg-red-600 border border-red-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest flex items-center gap-2 animate-pulse-red">
-                    <i data-lucide="alert-triangle" class="w-3 h-3"></i> Places très limitées
+                    <i data-lucide="alert-triangle" class="w-3 h-3"></i> Places limitées
                 </span>
                 <span class="bg-pink-600/20 border border-pink-500 text-pink-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-2">
-                    <i data-lucide="sparkles" class="w-3 h-3"></i> 14 Février 2026
+                    <i data-lucide="calendar" class="w-3 h-3"></i> 14 Février 2026
                 </span>
             </div>
             
@@ -45,19 +50,73 @@
             </h1>
             
             <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-6">
-                L'événement exclusif de la Saint-Valentin. <br/>
-                <span class="text-yellow-400 font-bold">Réservez maintenant pour garantir votre place. Paiement plus tard.</span>
+                Vivez une Saint-Valentin inoubliable en plein air. Cinéma géant, ambiance romantique et souvenirs magiques.
+                <br/><span class="text-yellow-400 font-bold mt-2 block">Réservez maintenant, payez plus tard.</span>
             </p>
 
             <div class="flex justify-center gap-3 md:gap-6 my-8 text-center" id="countdown">
                 </div>
 
             <a href="#reservation" class="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-white/10 animate-bounce">
-                <span>Bloquer ma place (Urgent)</span>
+                <span>Bloquer ma place (Gratuit)</span>
                 <i data-lucide="arrow-down" class="w-5 h-5"></i>
             </a>
         </div>
     </header>
+
+    <section class="py-20 px-4 bg-slate-900">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-pink-500">Plus qu'un film, <br/><span class="text-white">une expérience.</span></h2>
+                <p class="text-gray-300 leading-relaxed">
+                    Imaginez-vous sous le ciel de Yaoundé, confortablement installés, profitant d'un classique du cinéma romantique sur écran géant.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3 text-gray-200">
+                        <div class="bg-pink-500/20 p-2 rounded-full"><i data-lucide="stars" class="w-5 h-5 text-pink-400"></i></div>
+                        <span>Ambiance lumineuse féérique & décoration soignée</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-200">
+                        <div class="bg-pink-500/20 p-2 rounded-full"><i data-lucide="music" class="w-5 h-5 text-pink-400"></i></div>
+                        <span>Animation musicale avant & après la projection</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-200">
+                        <div class="bg-pink-500/20 p-2 rounded-full"><i data-lucide="camera" class="w-5 h-5 text-pink-400"></i></div>
+                        <span>Photobooth pour immortaliser votre couple</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-pink-500 blur-3xl opacity-20 rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd8?q=80&w=2076&auto=format&fit=crop" alt="Ambiance romantique" class="relative rounded-2xl shadow-2xl border border-slate-700 rotate-2 hover:rotate-0 transition-transform duration-500">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-10 flex items-center justify-center gap-2">
+                <i data-lucide="clock" class="text-pink-500"></i> Programme de la Soirée
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-effect p-6 rounded-2xl">
+                    <span class="text-pink-400 font-bold text-xl block mb-2">18:00</span>
+                    <h3 class="font-bold text-white mb-2">Accueil & Tapis Rouge</h3>
+                    <p class="text-xs text-gray-400">Installation, Photos et Cocktail de bienvenue (payant)</p>
+                </div>
+                <div class="glass-effect p-6 rounded-2xl border-pink-500/50 border">
+                    <span class="text-pink-400 font-bold text-xl block mb-2">19:30</span>
+                    <h3 class="font-bold text-white mb-2">Projection du Film</h3>
+                    <p class="text-xs text-gray-400">Début du film sous les étoiles avec Popcorn inclus</p>
+                </div>
+                <div class="glass-effect p-6 rounded-2xl">
+                    <span class="text-pink-400 font-bold text-xl block mb-2">21:30</span>
+                    <h3 class="font-bold text-white mb-2">After & Détente</h3>
+                    <p class="text-xs text-gray-400">Musique, échanges et annonce du couple gagnant</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="py-12 bg-slate-900 border-y border-blue-900/30 relative overflow-hidden">
         <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10 relative z-10">
@@ -79,18 +138,19 @@
         </div>
     </section>
 
-    <section id="reservation" class="py-16 bg-slate-900 relative">
+    <section id="reservation" class="py-20 bg-slate-950 relative">
         <div class="max-w-3xl mx-auto px-4 relative z-10">
             
             <div class="bg-red-500/10 border border-red-500/50 rounded-2xl p-4 mb-8 flex items-start gap-4 animate-pulse">
                 <i data-lucide="alert-triangle" class="w-6 h-6 text-red-500 shrink-0 mt-1"></i>
                 <div>
                     <h3 class="font-bold text-red-400">Disponibilité critique</h3>
-                    <p class="text-sm text-gray-300">Forte demande. Réservez maintenant, payez plus tard.</p>
+                    <p class="text-sm text-gray-300">Forte demande. Réservez votre place maintenant pour garantir l'accès. Paiement 48h avant l'événement.</p>
                 </div>
             </div>
 
             <div class="bg-slate-800 p-6 md:p-8 rounded-3xl shadow-2xl border border-slate-700">
+                <h2 class="text-2xl font-bold text-center mb-6">Inscription sur Liste</h2>
                 
                 <form id="bookingForm" class="space-y-6">
                     <div class="space-y-4">
@@ -99,12 +159,12 @@
                         </label>
                         <div class="grid md:grid-cols-2 gap-4">
                             <input type="text" id="nom" placeholder="Votre Nom complet" required
-                                class="w-full bg-slate-900 border border-slate-600 rounded-xl p-4 focus:border-pink-500 outline-none">
+                                class="w-full bg-slate-900 border border-slate-600 rounded-xl p-4 focus:border-pink-500 outline-none placeholder-gray-500">
                             <input type="text" id="tel" placeholder="Numéro WhatsApp (Important)" required
-                                class="w-full bg-slate-900 border border-slate-600 rounded-xl p-4 focus:border-pink-500 outline-none">
+                                class="w-full bg-slate-900 border border-slate-600 rounded-xl p-4 focus:border-pink-500 outline-none placeholder-gray-500">
                         </div>
                         <input type="email" id="email" placeholder="Email (Optionnel)"
-                            class="w-full bg-slate-900 border border-slate-600 rounded-xl p-4 focus:border-pink-500 outline-none">
+                            class="w-full bg-slate-900 border border-slate-600 rounded-xl p-4 focus:border-pink-500 outline-none placeholder-gray-500">
                     </div>
 
                     <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-600">
@@ -129,7 +189,7 @@
                         </label>
                         
                         <div onclick="selectPack('SOLO', 1000)" id="pack-SOLO"
-                             class="pack-item cursor-pointer border-2 border-slate-600 rounded-xl p-4 hover:bg-slate-700/50 transition-all flex justify-between items-center">
+                             class="pack-item cursor-pointer border-2 border-slate-600 rounded-xl p-4 hover:bg-slate-700/50 transition-all flex justify-between items-center bg-slate-900">
                             <div class="flex items-center gap-4">
                                 <div class="bg-slate-700 p-3 rounded-full"><i data-lucide="user" class="w-6 h-6 text-gray-300"></i></div>
                                 <div>
@@ -144,7 +204,7 @@
                         </div>
 
                         <div onclick="selectPack('COUPLE', 2500)" id="pack-COUPLE"
-                             class="pack-item cursor-pointer border-2 border-slate-600 rounded-xl p-4 hover:bg-slate-700/50 transition-all flex justify-between items-center">
+                             class="pack-item cursor-pointer border-2 border-slate-600 rounded-xl p-4 hover:bg-slate-700/50 transition-all flex justify-between items-center bg-slate-900">
                             <div class="flex items-center gap-4">
                                 <div class="bg-pink-900/50 p-3 rounded-full"><i data-lucide="heart" class="w-6 h-6 text-pink-500"></i></div>
                                 <div>
@@ -164,14 +224,51 @@
                         <span>Bloquer ma place (Places limitées)</span>
                         <i data-lucide="send" class="w-5 h-5"></i>
                     </button>
+                    
+                    <p class="text-center text-xs text-gray-500 mt-2">Aucun paiement requis aujourd'hui.</p>
                 </form>
 
             </div>
         </div>
     </section>
 
+    <section class="py-16 px-4 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-10 flex items-center justify-center gap-2">
+                <i data-lucide="help-circle" class="text-pink-500"></i> Questions Fréquentes
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-effect p-6 rounded-2xl">
+                    <h3 class="font-bold text-pink-400 flex items-center gap-2 mb-2"><i data-lucide="coffee" class="w-4 h-4"></i> Nourriture & Boissons ?</h3>
+                    <p class="text-gray-400 text-sm">Nous vendons de la nourriture (grillades) et boissons sur place. La nourriture extérieure n'est pas autorisée.</p>
+                </div>
+                <div class="glass-effect p-6 rounded-2xl">
+                    <h3 class="font-bold text-pink-400 flex items-center gap-2 mb-2"><i data-lucide="car" class="w-4 h-4"></i> Parking disponible ?</h3>
+                    <p class="text-gray-400 text-sm">Le parking est très limité. Nous recommandons fortement de venir en taxi pour éviter les tracas.</p>
+                </div>
+                <div class="glass-effect p-6 rounded-2xl">
+                    <h3 class="font-bold text-pink-400 flex items-center gap-2 mb-2"><i data-lucide="cloud-rain" class="w-4 h-4"></i> Et s'il pleut ?</h3>
+                    <p class="text-gray-400 text-sm">Pas d'inquiétude ! Une zone couverte est prévue pour abriter tout le monde et continuer la fête.</p>
+                </div>
+                <div class="glass-effect p-6 rounded-2xl">
+                    <h3 class="font-bold text-pink-400 flex items-center gap-2 mb-2"><i data-lucide="shirt" class="w-4 h-4"></i> Code Vestimentaire ?</h3>
+                    <p class="text-gray-400 text-sm">Chic & Décontracté. Faites un effort : le couple le mieux habillé gagne un prix grâce à Blue Energy !</p>
+                </div>
+                <div class="glass-effect p-6 rounded-2xl">
+                    <h3 class="font-bold text-pink-400 flex items-center gap-2 mb-2"><i data-lucide="shield-check" class="w-4 h-4"></i> Sécurité ?</h3>
+                    <p class="text-gray-400 text-sm">Une équipe de sécurité professionnelle sera présente toute la soirée pour assurer votre tranquillité.</p>
+                </div>
+                <div class="glass-effect p-6 rounded-2xl">
+                    <h3 class="font-bold text-pink-400 flex items-center gap-2 mb-2"><i data-lucide="wallet" class="w-4 h-4"></i> Paiement ?</h3>
+                    <p class="text-gray-400 text-sm">Vous réservez gratuitement aujourd'hui. Un lien de paiement vous sera envoyé 48h avant pour confirmer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="py-10 text-center text-gray-600 text-sm border-t border-slate-900 bg-slate-950">
         <p>Yaoundé • Cameroun • St Valentin 2026</p>
+        <p class="mt-2 text-xs opacity-50">Site sécurisé et optimisé pour mobile</p>
     </footer>
 
     <div id="successPopup" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 hidden">
@@ -180,82 +277,85 @@
                 <i data-lucide="check-circle" class="w-8 h-8"></i>
             </div>
             <h3 class="text-2xl font-bold mb-2">Place Bloquée !</h3>
-            <p class="text-gray-600 mb-4 text-sm">Votre référence :</p>
-            <div id="refDisplay" class="bg-slate-100 p-3 rounded-xl font-mono text-2xl font-bold text-slate-800 mb-6">...</div>
+            <p class="text-gray-600 mb-4 text-sm">Votre référence unique :</p>
+            <div id="refDisplay" class="bg-slate-100 p-3 rounded-xl font-mono text-2xl font-bold text-slate-800 mb-6 tracking-widest">...</div>
             
             <div class="bg-amber-50 border border-amber-200 p-3 rounded-lg text-amber-800 text-xs text-left mb-6">
-                <strong>⚠️ DERNIÈRE ÉTAPE :</strong><br/>
-                Envoyez cette référence sur WhatsApp maintenant pour valider votre inscription.
+                <strong>⚠️ DERNIÈRE ÉTAPE OBLIGATOIRE :</strong><br/>
+                Cliquez sur le bouton ci-dessous pour envoyer cette référence à l'organisateur via WhatsApp.
             </div>
 
             <a id="waButton" href="#" target="_blank" class="block w-full py-4 bg-[#25D366] text-white rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:scale-105 transition-transform animate-bounce">
-                <i data-lucide="message-circle" class="w-6 h-6"></i> Envoyer à l'Admin
+                <i data-lucide="message-circle" class="w-6 h-6"></i> Valider sur WhatsApp
             </a>
             <button onclick="document.getElementById('successPopup').classList.add('hidden')" class="mt-4 text-gray-400 text-xs underline">Fermer</button>
         </div>
     </div>
 
     <script>
-        // Initialisation des icônes
+        // Initialisation des icônes Lucide
         lucide.createIcons();
 
-        // Gestion de la sélection de Pack
+        // Variables globales
         let currentPack = null;
         let currentPrice = 0;
 
+        // Fonction Selection Pack
         function selectPack(pack, price) {
             currentPack = pack;
             currentPrice = price;
             
-            // Reset styles
+            // Reset visuel
             document.querySelectorAll('.pack-item').forEach(el => {
                 el.classList.remove('border-pink-500', 'bg-pink-500/10');
                 el.classList.add('border-slate-600');
             });
 
-            // Active style
+            // Activation visuelle
             const selected = document.getElementById('pack-' + pack);
             selected.classList.remove('border-slate-600');
             selected.classList.add('border-pink-500', 'bg-pink-500/10');
         }
 
-        // Envoi du formulaire
+        // Fonction Soumission Formulaire
         function submitForm() {
             const nom = document.getElementById('nom').value;
             const tel = document.getElementById('tel').value;
             const email = document.getElementById('email').value;
             const transport = document.querySelector('input[name="transport"]:checked').value;
 
+            // Validation simple
             if (!nom || !tel || !currentPack) {
-                alert("⚠️ Merci de remplir votre Nom, Numéro et de choisir un Pack !");
+                alert("⚠️ Oups ! Merci de remplir votre Nom, votre Numéro et de choisir un Pack.");
                 return;
             }
 
-            // Générer ID
+            // Génération ID (Faux backend pour l'instant, mais suffisant)
             const refID = "RES-" + Math.random().toString(36).substr(2, 5).toUpperCase();
             
-            // Préparer lien WhatsApp
-            const ADMIN_NUM = "237658980051"; 
-            let msg = `*🚨 NOUVELLE RÉSERVATION (À RELANCER)*\n`;
+            // Préparation du message WhatsApp pour l'admin
+            const ADMIN_NUM = "237658980051"; // Ton numéro
+            let msg = `*🚨 NOUVELLE RÉSERVATION (Ciné St Valentin)*\n`;
             msg += `-----------------------------\n`;
             msg += `📝 *REF:* ${refID}\n`;
             msg += `👤 *Nom:* ${nom}\n`;
             msg += `📞 *Tel:* ${tel}\n`;
             msg += `🎟️ *Pack:* ${currentPack}\n`;
-            msg += `💰 *Montant:* ${currentPrice} FCFA (Non payé)\n`;
+            msg += `💰 *Montant:* ${currentPrice} FCFA (À payer)\n`;
             msg += `🚗 *Transport:* ${transport}\n`;
+            if(email) msg += `📧 *Email:* ${email}\n`;
             msg += `-----------------------------\n`;
-            msg += `Client en attente de validation.`;
+            msg += `Je confirme ma présence.`;
 
             const link = `https://wa.me/${ADMIN_NUM}?text=${encodeURIComponent(msg)}`;
 
-            // Afficher Popup
+            // Affichage Popup
             document.getElementById('refDisplay').innerText = refID;
             document.getElementById('waButton').href = link;
             document.getElementById('successPopup').classList.remove('hidden');
         }
 
-        // Timer Compte à rebours
+        // Compte à rebours
         const eventDate = new Date("Feb 14, 2026 18:00:00").getTime();
         setInterval(() => {
             const now = new Date().getTime();
@@ -263,6 +363,7 @@
             
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             
             const html = `
                 <div class="bg-slate-900/60 border border-white/10 backdrop-blur-sm p-3 rounded-xl w-20">
@@ -272,6 +373,10 @@
                 <div class="bg-slate-900/60 border border-white/10 backdrop-blur-sm p-3 rounded-xl w-20">
                     <div class="text-2xl md:text-3xl font-bold text-pink-500">${hours}</div>
                     <div class="text-[10px] uppercase text-gray-400">Heures</div>
+                </div>
+                 <div class="bg-slate-900/60 border border-white/10 backdrop-blur-sm p-3 rounded-xl w-20">
+                    <div class="text-2xl md:text-3xl font-bold text-pink-500">${mins}</div>
+                    <div class="text-[10px] uppercase text-gray-400">Min</div>
                 </div>
             `;
             document.getElementById('countdown').innerHTML = html;
