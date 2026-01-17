@@ -26,16 +26,16 @@
 
     <div class="bg-blue-950 text-blue-200 text-xs font-bold text-center py-3 border-b border-blue-900 flex items-center justify-center gap-2 sticky top-0 z-50">
         <i data-lucide="zap" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <span>Événement propulsé par <span class="text-white uppercase tracking-widest font-extrabold">BLUE ENERGY</span></span>
+        <span>Une expérience signée <span class="text-white uppercase tracking-widest font-extrabold">BLUE ENERGY</span></span>
     </div>
 
-    <header class="relative min-h-[85vh] flex flex-col items-center justify-center text-center px-4 pb-10 overflow-hidden">
+    <header class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 pb-10 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="cine.jpg" alt="Cinema Background" class="w-full h-full object-cover opacity-40">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-purple-900/40"></div>
         </div>
 
-        <div class="relative z-10 max-w-4xl w-full mt-10 flex flex-col items-center">
+        <div class="relative z-10 max-w-5xl w-full mt-10 flex flex-col items-center">
             <div class="flex flex-col md:flex-row items-center justify-center gap-3 mb-6">
                 <span class="bg-red-600 border border-red-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest flex items-center gap-2 animate-pulse-red">
                     <i data-lucide="alert-triangle" class="w-3 h-3"></i> Places limitées
@@ -45,17 +45,20 @@
                 </span>
             </div>
             
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-2 leading-tight">
                 L'Amour sous <br/><span class="text-pink-500">les Étoiles</span>
             </h1>
+
+            <p class="text-blue-400 font-bold tracking-[0.2em] text-sm uppercase mb-6 opacity-90">
+                Présenté par BLUE ENERGY
+            </p>
             
-            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-6">
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-6 leading-relaxed">
                 Vivez une Saint-Valentin inoubliable en plein air. Cinéma géant, ambiance romantique et souvenirs magiques.
                 <br/><span class="text-yellow-400 font-bold mt-2 block">Réservez maintenant, payez plus tard.</span>
             </p>
 
-            <div class="flex justify-center gap-3 md:gap-6 my-8 text-center" id="countdown">
-                </div>
+            <div class="flex justify-center gap-3 md:gap-6 my-8 text-center" id="countdown"></div>
 
             <div class="flex flex-col md:flex-row gap-4 w-full justify-center items-center">
                 <a href="#reservation" class="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-white/10 animate-bounce">
@@ -136,6 +139,52 @@
         </div>
     </section>
 
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-950 via-slate-900 to-slate-950"></div>
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-blue-400 font-bold tracking-[0.2em] uppercase text-sm">Partenaire Officiel</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mt-2 mb-4">BLUE <span class="text-blue-500">ENERGY</span></h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative group cursor-pointer">
+                     <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                     <div class="relative bg-slate-900 rounded-2xl p-8 border border-blue-500/30 flex items-center justify-center aspect-video">
+                         <img src="./logo.jpeg" alt="Blue Energy Logo" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
+                     </div>
+                </div>
+
+                <div class="space-y-6 text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-white">L'Élégance à l'Honneur</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Pour cette Saint-Valentin, <strong class="text-blue-400">Blue Energy</strong> sublime votre soirée. Sortez vos plus belles tenues : nous récompensons l'élégance.
+                    </p>
+                    
+                    <div class="bg-blue-900/30 border border-blue-500/30 p-6 rounded-xl hover:bg-blue-900/40 transition-colors">
+                        <div class="flex items-start gap-4 text-left">
+                            <div class="bg-blue-600 p-3 rounded-full shrink-0 shadow-lg shadow-blue-600/20">
+                                <i data-lucide="trophy" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Le Prix "Couple Star"</h4>
+                                <p class="text-sm text-gray-300 mt-1">Le couple le mieux habillé de la soirée remportera <span class="text-yellow-400 font-bold">10% de réduction immédiate</span> sur toute la nouvelle collection.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://blue-energy-store.vercel.app" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-blue-900/20 w-full md:w-auto justify-center">
+                        <span>Visiter la Boutique</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-16 bg-slate-900 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-64 h-64 bg-pink-600/10 rounded-full blur-3xl"></div>
         <div class="max-w-5xl mx-auto px-4 relative z-10">
@@ -164,26 +213,6 @@
                     <h3 class="font-bold text-xl mb-2">Boissons</h3>
                     <p class="text-sm text-gray-400">Jus naturels, sodas et sélection de vins.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 bg-slate-950 border-y border-blue-900/30 relative overflow-hidden">
-        <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10 relative z-10">
-            <div class="w-full md:w-1/3 bg-slate-800/80 p-8 rounded-2xl border border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.3)] text-center">
-                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-white p-2 overflow-hidden flex items-center justify-center">
-                    <img src="./logo.jpeg" alt="Blue Energy" class="w-full h-full object-contain">
-                </div>
-                <h3 class="font-extrabold text-2xl tracking-tight text-white">BLUE ENERGY</h3>
-                <p class="text-blue-400 text-xs font-bold uppercase tracking-widest mt-1">Sponsor Officiel</p>
-            </div>
-            <div class="flex-1 text-center md:text-left">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">L'élégance récompensée</h2>
-                <p class="text-gray-300 mb-6 text-lg">Le couple le mieux habillé remportera <strong class="text-blue-400">10% de réduction</strong>.</p>
-                <a href="https://blue-energy-store.vercel.app" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white text-blue-900 px-6 py-3 rounded-xl font-bold hover:bg-blue-50 transition-colors">
-                    <span>Voir la collection</span>
-                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
             </div>
         </div>
     </section>
@@ -282,7 +311,7 @@
 
     <section class="py-0 h-80 w-full relative grayscale hover:grayscale-0 transition-all duration-500">
         <iframe 
-            src="https://maps.google.com/maps?q=Yaounde&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127357.54605481711!2d11.436219665985094!3d3.848032488133503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf7a309a7977%3A0x7f54bad35e693c51!2sYaound%C3%A9%2C%20Cameroun!5e0!3m2!1sfr!2sfr!4v1707525287000!5m2!1sfr!2sfr" 
             width="100%" 
             height="100%" 
             style="border:0;" 
@@ -333,6 +362,14 @@
     <footer class="py-10 text-center text-gray-600 text-sm border-t border-slate-900 bg-slate-950">
         <p>Yaoundé • Cameroun • St Valentin 2026</p>
         <p class="mt-2 text-xs opacity-50">Site sécurisé et optimisé pour mobile</p>
+        
+        <div class="mt-6 flex items-center justify-center gap-2 text-slate-500 text-xs">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span id="liveCounter">Chargement...</span> inscrits
+        </div>
     </footer>
 
     <div id="successPopup" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 hidden">
@@ -361,6 +398,28 @@
         let currentPack = null;
         let currentPrice = 0;
 
+        // --- GESTION DU COMPTEUR ---
+        const COUNTER_NAMESPACE = 'cine-st-valentin-2026-cameroun'; 
+        const COUNTER_KEY = 'reservations';
+
+        fetch(`https://api.countapi.xyz/get/${COUNTER_NAMESPACE}/${COUNTER_KEY}`)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('liveCounter').innerText = "Déjà " + data.value;
+            })
+            .catch(() => {
+                document.getElementById('liveCounter').innerText = "Déjà 42";
+            });
+
+        function incrementCounter() {
+            fetch(`https://api.countapi.xyz/hit/${COUNTER_NAMESPACE}/${COUNTER_KEY}`)
+                .then(res => res.json())
+                .then(data => {
+                    console.log("Nouveau total: " + data.value);
+                });
+        }
+
+
         function selectPack(pack, price) {
             currentPack = pack;
             currentPrice = price;
@@ -383,6 +442,8 @@
                 alert("⚠️ Oups ! Merci de remplir votre Nom, votre Numéro et de choisir un Pack.");
                 return;
             }
+
+            incrementCounter();
 
             const refID = "RES-" + Math.random().toString(36).substr(2, 5).toUpperCase();
             const ADMIN_NUM = "237658980051";
