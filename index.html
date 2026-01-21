@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciné Sous Les Étoiles - St Valentin 2026</title>
+    <title>Ciné & Piscine Sous Les Étoiles - St Valentin 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Animation Pulsation Coeur */
-        @keyframes pulse-heart {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+        @keyframes pulse-red {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(225, 29, 72, 0); }
         }
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 5px rgba(244, 63, 94, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(244, 63, 94, 0.8); }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-pulse-red {
+            animation: pulse-red 2s infinite;
         }
         .glass-effect {
             background: rgba(30, 41, 59, 0.7);
@@ -23,22 +26,22 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .card-hover:hover {
-            border-color: #f43f5e; /* Rose-500 */
-            background: rgba(244, 63, 94, 0.05);
+            transform: translateY(-5px);
+            border-color: #f43f5e;
+            background: rgba(244, 63, 94, 0.1);
         }
     </style>
 </head>
 <body class="bg-[#0f0510] text-white font-sans selection:bg-rose-500 selection:text-white">
 
     <div class="bg-slate-900 text-blue-200 text-xs font-bold text-center py-3 border-b border-blue-900/30 flex items-center justify-center gap-2 sticky top-0 z-50 shadow-lg">
-        <i data-lucide="zap" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <span>Une expérience signée <span class="text-white uppercase tracking-widest font-extrabold">BLUE ENERGY</span></span>
+        <i data-lucide="map-pin" class="w-4 h-4 text-rose-500 fill-rose-500"></i>
+        <span>Lieu confirmé : <span class="text-white uppercase tracking-widest font-extrabold">MAHIMA ETOA-MEKI</span></span>
     </div>
 
     <header class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 pb-10 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="cine.jpg" alt="Cinema Background" class="w-full h-full object-cover">
-            
             <div class="absolute inset-0 bg-gradient-to-t from-[#0f0510] via-slate-900/80 to-rose-900/40 mix-blend-multiply"></div>
             <div class="absolute inset-0 bg-black/40"></div>
         </div>
@@ -54,21 +57,20 @@
             </div>
             
             <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight drop-shadow-xl">
-                L'Amour sous <br/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-500 to-purple-500">les Étoiles</span>
+                Ciné, Piscine & Fun <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-500 to-purple-500">sous les Étoiles</span>
             </h1>
 
             <p class="text-blue-400 font-bold tracking-[0.2em] text-xs uppercase mb-6 opacity-80">
-                — Présenté par BLUE ENERGY —
+                — Présenté par BLUE ENERGY à MAHIMA —
             </p>
             
             <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8 leading-relaxed font-light">
-                Une soirée cinéma en plein air, féérique et inoubliable.
+                L'événement ultime de la Saint-Valentin. Cinéma géant, Pool Party et Espace Enfants.
                 <br/><span class="text-yellow-400 font-bold mt-2 block">Réservez maintenant (0 FCFA), payez plus tard.</span>
             </p>
 
-            <div class="flex justify-center gap-4 mb-10 text-center" id="countdown">
-                </div>
+            <div class="flex justify-center gap-4 mb-10 text-center" id="countdown"></div>
 
             <div class="flex flex-col md:flex-row gap-4 w-full justify-center items-center">
                 <a href="#reservation" class="group relative inline-flex items-center gap-2 bg-gradient-to-r from-rose-600 to-pink-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-[0_0_20px_rgba(225,29,72,0.4)] hover:shadow-[0_0_30px_rgba(225,29,72,0.6)] hover:scale-105 transition-all">
@@ -76,7 +78,7 @@
                     <i data-lucide="arrow-down" class="w-5 h-5 group-hover:translate-y-1 transition-transform"></i>
                 </a>
                 
-                <a href="https://wa.me/?text=Regarde%20ça%20!%20Une%20soirée%20ciné%20St%20Valentin%20?%20On%20réserve%20?%20https://cine-2026.vercel.app/" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-colors backdrop-blur-sm">
+                <a href="https://wa.me/?text=Regarde%20ça%20!%20Soirée%20Ciné%20+%20Piscine%20à%20Mahima%20pour%20la%20St%20Valentin%20!%20On%20réserve%20?%20https://cine-2026.vercel.app/" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-colors backdrop-blur-sm">
                     <span>Inviter mon Crush</span>
                     <i data-lucide="share-2" class="w-5 h-5"></i>
                 </a>
@@ -84,73 +86,64 @@
         </div>
     </header>
 
-    <section class="bg-[#1a0b1c] py-8 px-4 border-b border-white/5">
-        <div class="max-w-xl mx-auto text-center">
-            <h2 class="text-sm font-bold mb-4 flex items-center justify-center gap-2 text-rose-300 uppercase tracking-widest">
-                <i data-lucide="music" class="w-4 h-4"></i> La Vibe de la soirée
-            </h2>
-            <div class="rounded-xl overflow-hidden shadow-2xl border border-white/10">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-
     <section class="py-20 px-4 bg-gradient-to-b from-[#0f0510] to-[#160815]">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Plus qu'un film... <br/><span class="text-rose-500">Un moment magique.</span></h2>
-                <p class="text-gray-300 leading-relaxed text-lg">
-                    Imaginez-vous sous le ciel de Yaoundé, main dans la main, devant un classique du cinéma romantique sur écran géant.
-                </p>
-                <ul class="space-y-6">
-                    <li class="flex items-center gap-4">
-                        <div class="bg-rose-500/20 p-3 rounded-full text-rose-500"><i data-lucide="stars" class="w-6 h-6"></i></div>
-                        <span class="text-gray-200">Décoration féérique & Guirlandes lumineuses</span>
-                    </li>
-                    <li class="flex items-center gap-4">
-                        <div class="bg-rose-500/20 p-3 rounded-full text-rose-500"><i data-lucide="music" class="w-6 h-6"></i></div>
-                        <span class="text-gray-200">Animation musicale douce (Avant/Après)</span>
-                    </li>
-                    <li class="flex items-center gap-4">
-                        <div class="bg-rose-500/20 p-3 rounded-full text-rose-500"><i data-lucide="camera" class="w-6 h-6"></i></div>
-                        <span class="text-gray-200">Photobooth romantique pour vos souvenirs</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="relative group">
-                <div class="absolute inset-0 bg-rose-600 blur-[60px] opacity-20 rounded-full group-hover:opacity-30 transition-opacity"></div>
-                <img src="image.jpeg" alt="Ambiance romantique" class="relative rounded-2xl shadow-2xl border border-white/10 rotate-1 group-hover:rotate-0 transition-transform duration-700 w-full object-cover h-80 md:h-auto">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">3 Ambiances, <span class="text-rose-500">1 Lieu Unique</span></h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-effect p-8 rounded-3xl text-center border border-white/5 card-hover transition-all duration-300">
+                    <div class="w-16 h-16 mx-auto bg-rose-500/20 rounded-full flex items-center justify-center mb-6 text-rose-500">
+                        <i data-lucide="film" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Cinéma Géant</h3>
+                    <p class="text-gray-400 text-sm">Projection romantique sur écran géant en plein air. Installés confortablement sous les étoiles.</p>
+                </div>
+
+                <div class="glass-effect p-8 rounded-3xl text-center border border-white/5 card-hover transition-all duration-300">
+                    <div class="w-16 h-16 mx-auto bg-blue-500/20 rounded-full flex items-center justify-center mb-6 text-blue-400">
+                        <i data-lucide="waves" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Piscine Party</h3>
+                    <p class="text-gray-400 text-sm">Ambiance détendue au bord de l'eau. Baignade autorisée, musique et cocktails frais.</p>
+                </div>
+
+                <div class="glass-effect p-8 rounded-3xl text-center border border-white/5 card-hover transition-all duration-300">
+                    <div class="w-16 h-16 mx-auto bg-orange-500/20 rounded-full flex items-center justify-center mb-6 text-orange-400">
+                        <i data-lucide="gamepad-2" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Espace Enfants</h3>
+                    <p class="text-gray-400 text-sm">Un espace de jeu dédié et sécurisé pour les petits. Profitez de votre soirée, ils s'amusent !</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-[#0f0510] relative">
+    <section class="py-16 bg-[#0f0510] relative border-t border-slate-900">
         <div class="max-w-4xl mx-auto px-4 relative z-10">
             <h2 class="text-3xl font-bold text-center mb-12 flex items-center justify-center gap-2">
-                <i data-lucide="clock" class="text-rose-500"></i> Programme
+                <i data-lucide="clock" class="text-rose-500"></i> Déroulé de la Soirée
             </h2>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="glass-effect p-6 rounded-2xl text-center border-t-4 border-t-transparent hover:border-t-rose-500 transition-all">
                     <span class="text-rose-400 font-extrabold text-2xl block mb-2">16:00</span>
-                    <h3 class="font-bold text-white mb-2">Ouverture & Tapis Rouge</h3>
-                    <p class="text-xs text-gray-400">Photos, Installation et Cocktail de bienvenue</p>
+                    <h3 class="font-bold text-white mb-2">Ouverture & Jeux</h3>
+                    <p class="text-xs text-gray-400">Ouverture piscine, espace enfants et tapis rouge.</p>
                 </div>
                 <div class="glass-effect p-8 rounded-2xl text-center border border-rose-500/30 bg-rose-500/5 transform md:-translate-y-4 shadow-xl shadow-rose-900/10">
                     <span class="text-rose-400 font-extrabold text-3xl block mb-2">19:30</span>
                     <h3 class="font-bold text-white mb-2 text-xl">Le Film</h3>
-                    <p class="text-xs text-rose-200/80">Début de la projection sous les étoiles</p>
+                    <p class="text-xs text-rose-200/80">Début de la projection</p>
                 </div>
                 <div class="glass-effect p-6 rounded-2xl text-center border-t-4 border-t-transparent hover:border-t-rose-500 transition-all">
                     <span class="text-rose-400 font-extrabold text-2xl block mb-2">21:30</span>
-                    <h3 class="font-bold text-white mb-2">After & Résultats</h3>
-                    <p class="text-xs text-gray-400">Musique, détente et annonce du Couple Gagnant</p>
+                    <h3 class="font-bold text-white mb-2">After & Baignade</h3>
+                    <p class="text-xs text-gray-400">Ambiance musicale, piscine et résultats du concours.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 relative overflow-hidden bg-slate-900 border-t border-slate-800">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-950/50 via-slate-900 to-slate-950"></div>
+    <section class="py-20 relative overflow-hidden bg-slate-900 border-y border-slate-800">
         <div class="max-w-6xl mx-auto px-4 relative z-10">
             <div class="text-center mb-10">
                 <span class="text-blue-400 font-bold tracking-[0.2em] uppercase text-xs">Sponsor Officiel</span>
@@ -161,11 +154,10 @@
                 <div class="flex items-center justify-center p-6 bg-slate-900 rounded-2xl border border-slate-700">
                      <img src="./logo.jpeg" alt="Blue Energy Logo" class="w-48 h-48 object-contain">
                 </div>
-
                 <div class="text-center md:text-left">
                     <h3 class="text-2xl font-bold text-white mb-4">L'Élégance à l'Honneur</h3>
                     <p class="text-gray-300 mb-6">
-                        Sortez vos plus belles tenues ! <strong class="text-blue-400">Blue Energy</strong> offre <span class="text-yellow-400 font-bold">10% de réduction</span> et un cadeau spécial au couple le mieux habillé de la soirée.
+                        Sortez vos plus belles tenues ! <strong class="text-blue-400">Blue Energy</strong> offre <span class="text-yellow-400 font-bold">10% de réduction</span> au couple le mieux habillé.
                     </p>
                     <a href="https://blue-energy-store.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-blue-400 font-bold hover:text-blue-300 hover:underline">
                         <span>Visiter la boutique en ligne</span>
@@ -173,69 +165,13 @@
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="py-10 bg-[#0a030b] border-y border-slate-900/50">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h3 class="text-xs font-bold text-gray-500 uppercase tracking-[0.3em] mb-8">Ils nous accompagnent</h3>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70">
-                <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 cursor-pointer">
-                    <span class="text-[10px] font-bold text-gray-400"><img src="logo1.jpeg" alt=""></span>
-                </div>
-                 <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 cursor-pointer">
-                    <span class="text-[10px] font-bold text-gray-400"><img src="logo2.jpeg" alt=""></span>
-                </div>
-                 <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 cursor-pointer">
-                    <span class="text-[10px] font-bold text-gray-400"><img src="logo3.jpeg" alt=""></span>
-                </div>
-                 <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 cursor-pointer">
-                    <span class="text-[10px] font-bold text-gray-400"><img src="logo4.jpeg" alt=""></span>
-                </div>
-                 <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 cursor-pointer">
-                    <span class="text-[10px] font-bold text-gray-400"><img src="logo5.jpeg" alt=""></span>
-                </div>
-                <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 cursor-pointer">
-                    <span class="text-[10px] font-bold text-gray-400"><img src="logo6.jpeg" alt=""></span>
-                </div>
-                <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 cursor-pointer">
-                    <span class="text-[10px] font-bold text-gray-400"><img src="logo7.jpeg" alt=""></span>
-                </div>
-                <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 cursor-pointer">
-                    <span class="text-[10px] font-bold text-gray-400"><img src="logo8.jpeg" alt=""></span>
-                </div><div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-all border border-white/5 cursor-pointer">
-                    <span class="text-[10px] font-bold text-gray-400"><img src="logo9.jpeg" alt=""></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-[#0f0510] relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="text-3xl font-bold text-center mb-12 flex items-center justify-center gap-2">
-                <i data-lucide="utensils" class="text-rose-500"></i> Au Menu
-            </h2>
-            <div class="grid grid-cols-3 gap-4 md:gap-8">
-                <div class="text-center group">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-rose-900/20 group-hover:text-rose-500 transition-colors border border-slate-700">
-                        <i data-lucide="popcorn" class="w-8 h-8 text-yellow-400"></i>
-                    </div>
-                    <h3 class="font-bold text-white text-sm md:text-lg">Popcorn</h3>
-                    <p class="text-[10px] md:text-xs text-gray-500">Inclus</p>
-                </div>
-                <div class="text-center group">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-rose-900/20 group-hover:text-rose-500 transition-colors border border-slate-700">
-                        <i data-lucide="flame" class="w-8 h-8 text-orange-500"></i>
-                    </div>
-                    <h3 class="font-bold text-white text-sm md:text-lg">Grillades</h3>
-                    <p class="text-[10px] md:text-xs text-gray-500">En vente</p>
-                </div>
-                <div class="text-center group">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-rose-900/20 group-hover:text-rose-500 transition-colors border border-slate-700">
-                        <i data-lucide="wine" class="w-8 h-8 text-rose-500"></i>
-                    </div>
-                    <h3 class="font-bold text-white text-sm md:text-lg">Boissons</h3>
-                    <p class="text-[10px] md:text-xs text-gray-500">En vente</p>
+            <div class="mt-16 text-center">
+                <h3 class="text-xs font-bold text-gray-500 uppercase tracking-[0.3em] mb-8">Ils nous accompagnent</h3>
+                <div class="flex flex-wrap justify-center items-center gap-8 opacity-70">
+                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10"><span class="text-[10px] text-gray-400">log1</span></div>
+                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10"><span class="text-[10px] text-gray-400">logo2</span></div>
+                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10"><span class="text-[10px] text-gray-400">logo3</span></div>
                 </div>
             </div>
         </div>
@@ -243,12 +179,11 @@
 
     <section id="reservation" class="py-20 bg-gradient-to-b from-[#0f0510] to-[#1a0b1c] relative">
         <div class="max-w-3xl mx-auto px-4 relative z-10">
-            
             <div class="bg-rose-500/10 border border-rose-500/30 rounded-2xl p-4 mb-8 flex items-start gap-4 animate-pulse">
                 <i data-lucide="hourglass" class="w-6 h-6 text-rose-500 shrink-0 mt-1"></i>
                 <div>
                     <h3 class="font-bold text-rose-400">Dernières places disponibles</h3>
-                    <p class="text-sm text-gray-400">Forte demande en cours. Bloquez votre place maintenant, payez plus tard.</p>
+                    <p class="text-sm text-gray-400">Forte demande pour Mahima. Bloquez votre place maintenant.</p>
                 </div>
             </div>
 
@@ -262,22 +197,22 @@
                         </label>
                         <div class="grid md:grid-cols-2 gap-4">
                             <input type="text" id="nom" placeholder="Votre Nom complet" required
-                                class="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none placeholder-gray-600 transition-all">
+                                class="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 focus:border-rose-500 outline-none placeholder-gray-600">
                             <input type="text" id="tel" placeholder="Numéro WhatsApp" required
-                                class="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none placeholder-gray-600 transition-all">
+                                class="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 focus:border-rose-500 outline-none placeholder-gray-600">
                         </div>
                         <input type="email" id="email" placeholder="Email (Optionnel)"
-                            class="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none placeholder-gray-600 transition-all">
+                            class="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 focus:border-rose-500 outline-none placeholder-gray-600">
                     </div>
 
                     <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
                         <label class="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase mb-3">
-                            <i data-lucide="car" class="w-4 h-4"></i> Transport
+                            <i data-lucide="car" class="w-4 h-4"></i> Transport (Parking Mahima)
                         </label>
                         <div class="flex gap-4">
                             <label class="flex items-center gap-2 cursor-pointer text-gray-400 hover:text-white transition-colors">
                                 <input type="radio" name="transport" value="VOITURE" class="accent-rose-500 w-4 h-4">
-                                <span>En Voiture</span>
+                                <span>En Voiture (Places limitées)</span>
                             </label>
                             <label class="flex items-center gap-2 cursor-pointer text-gray-400 hover:text-white transition-colors">
                                 <input type="radio" name="transport" value="TAXI" checked class="accent-rose-500 w-4 h-4">
@@ -297,7 +232,7 @@
                                 <div class="bg-slate-800 p-3 rounded-full group-hover:bg-slate-700 transition-colors"><i data-lucide="user" class="w-5 h-5 text-gray-400"></i></div>
                                 <div>
                                     <h3 class="font-bold text-lg text-gray-200">Pack SOLO</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">1 Entrée + Popcorn</p>
+                                    <p class="text-xs text-gray-500 mt-0.5">Accès Ciné + Piscine + Popcorn</p>
                                 </div>
                             </div>
                             <div class="text-right">
@@ -312,7 +247,7 @@
                                 <div class="bg-rose-900/30 p-3 rounded-full group-hover:bg-rose-900/50 transition-colors"><i data-lucide="heart" class="w-5 h-5 text-rose-500 fill-rose-500/20"></i></div>
                                 <div>
                                     <h3 class="font-bold text-lg text-rose-100">Pack COUPLE ❤️</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">2 Entrées + Rose + Popcorn</p>
+                                    <p class="text-xs text-gray-500 mt-0.5">2 Entrées + Piscine + Popcorn</p>
                                 </div>
                             </div>
                             <div class="text-right">
@@ -335,10 +270,10 @@
 
     <section class="py-0 h-72 w-full relative grayscale hover:grayscale-0 transition-all duration-500 border-t border-slate-800">
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127357.54605481711!2d11.436219665985094!3d3.848032488133503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf7a309a7977%3A0x7f54bad35e693c51!2sYaound%C3%A9%2C%20Cameroun!5e0!3m2!1sfr!2sfr!4v1707525287000!5m2!1sfr!2sfr" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.6970729759325!2d11.517371374974246!3d3.876127996097587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf7a309a797f%3A0x6e63276669919028!2sMahima%20Etoa-Meki!5e0!3m2!1sfr!2scm!4v1706000000000!5m2!1sfr!2scm" 
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         <div class="absolute top-4 left-4 bg-white text-slate-900 px-4 py-2 rounded-lg font-bold shadow-lg flex items-center gap-2">
-            <i data-lucide="map-pin" class="inline w-4 h-4 text-red-500"></i> Yaoundé (Lieu Secret)
+            <i data-lucide="map-pin" class="inline w-4 h-4 text-red-500"></i> MAHIMA Etoa-Meki (Yaoundé)
         </div>
     </section>
 
@@ -350,26 +285,29 @@
             <div class="grid md:grid-cols-2 gap-4">
                 <div class="bg-slate-900/50 p-5 rounded-xl border border-white/5">
                     <h3 class="font-bold text-rose-400 text-sm mb-1">Nourriture & Boissons ?</h3>
-                    <p class="text-gray-400 text-xs">Vente sur place (Grillades, Boissons). Interdit d'apporter de l'extérieur.</p>
+                    <p class="text-gray-400 text-xs">Interdit d'apporter de l'extérieur. Vente de grillades, popcorn et boissons sur place.</p>
                 </div>
                 <div class="bg-slate-900/50 p-5 rounded-xl border border-white/5">
                     <h3 class="font-bold text-rose-400 text-sm mb-1">Parking ?</h3>
-                    <p class="text-gray-400 text-xs">Très limité. Privilégiez le taxi pour éviter le stress.</p>
+                    <p class="text-gray-400 text-xs">Parking Mahima disponible mais places limitées. Venez tôt ou privilégiez le taxi.</p>
                 </div>
                 <div class="bg-slate-900/50 p-5 rounded-xl border border-white/5">
-                    <h3 class="font-bold text-rose-400 text-sm mb-1">Météo ?</h3>
-                    <p class="text-gray-400 text-xs">Saison sèche, ciel dégagé prévu. Prenez un petit pull.</p>
+                    <h3 class="font-bold text-rose-400 text-sm mb-1">Piscine ?</h3>
+                    <p class="text-gray-400 text-xs">Oui, L'accès à la piscine payante. Prévoyez vos maillots si vous voulez vous baigner.</p>
                 </div>
                 <div class="bg-slate-900/50 p-5 rounded-xl border border-white/5">
                     <h3 class="font-bold text-rose-400 text-sm mb-1">Paiement ?</h3>
-                    <p class="text-gray-400 text-xs">Réservation gratuite. Paiement par lien sécurisé 48h avant.</p>
+                    <p class="text-gray-400 text-xs">Réservation gratuite aujourd'hui. Paiement possible sur place le jour de l'événement.</p>
+                </div><div class="bg-slate-900/50 p-5 rounded-xl border border-white/5">
+                    <h3 class="font-bold text-rose-400 text-sm mb-1">Météo ?</h3>
+                    <p class="text-gray-400 text-xs">Saison sèche, ciel dégagé prévu. Prenez un petit pull.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="py-8 text-center text-gray-600 text-xs border-t border-slate-900 bg-[#0a030b]">
-        <p>Yaoundé • Cameroun • St Valentin 2026</p>
+        <p>Mahima Etoa-Meki • Yaoundé • St Valentin 2026</p>
         
         <div class="mt-4 flex items-center justify-center gap-2 text-rose-500/80 font-bold">
             <span class="relative flex h-2 w-2">
@@ -390,8 +328,8 @@
             <div id="refDisplay" class="bg-slate-100 p-3 rounded-xl font-mono text-2xl font-bold text-slate-800 mb-6 tracking-widest border border-slate-200">...</div>
             
             <div class="bg-amber-50 border border-amber-200 p-3 rounded-lg text-amber-800 text-xs text-left mb-6">
-                <strong>⚠️ DERNIÈRE ÉTAPE OBLIGATOIRE :</strong><br/>
-                Cliquez sur le bouton ci-dessous pour envoyer cette référence à l'organisateur via WhatsApp.
+                <strong>⚠️ IMPORTANT :</strong><br/>
+                Envoyez cette référence sur WhatsApp pour valider votre place sur la liste Mahima.
             </div>
 
             <a id="waButton" href="#" target="_blank" class="block w-full py-4 bg-[#25D366] text-white rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:brightness-105 transition-all shadow-lg animate-bounce">
@@ -409,7 +347,7 @@
         // --- COMPTEUR BOOSTÉ (+58) ---
         const COUNTER_NAMESPACE = 'cine-st-valentin-2026-cameroun'; 
         const COUNTER_KEY = 'reservations';
-        const FAKE_START = 58;
+        const FAKE_START = 90;
 
         fetch(`https://api.countapi.xyz/get/${COUNTER_NAMESPACE}/${COUNTER_KEY}`)
             .then(res => res.json())
@@ -454,7 +392,7 @@
 
             const refID = "RES-" + Math.random().toString(36).substr(2, 5).toUpperCase();
             const ADMIN_NUM = "237658980051";
-            let msg = `*🚨 NOUVELLE RÉSERVATION (Ciné St Valentin)*\n`;
+            let msg = `*🚨 NOUVELLE RÉSERVATION*\n`;
             msg += `-----------------------------\n`;
             msg += `📝 *REF:* ${refID}\n`;
             msg += `👤 *Nom:* ${nom}\n`;
@@ -464,7 +402,7 @@
             msg += `🚗 *Transport:* ${transport}\n`;
             if(email) msg += `📧 *Email:* ${email}\n`;
             msg += `-----------------------------\n`;
-            msg += `Je confirme ma présence.`;
+            msg += `Je confirme ma réservation.`;
 
             const link = `https://wa.me/${ADMIN_NUM}?text=${encodeURIComponent(msg)}`;
 
