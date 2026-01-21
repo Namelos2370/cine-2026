@@ -11,10 +11,9 @@
             0%, 100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(225, 29, 72, 0); }
         }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
         }
         .animate-pulse-red {
             animation: pulse-red 2s infinite;
@@ -29,6 +28,11 @@
             transform: translateY(-5px);
             border-color: #f43f5e;
             background: rgba(244, 63, 94, 0.1);
+        }
+        .gold-gradient {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
@@ -169,17 +173,39 @@
             <div class="mt-16 text-center">
                 <h3 class="text-xs font-bold text-gray-500 uppercase tracking-[0.3em] mb-8">Ils nous accompagnent</h3>
                 <div class="flex flex-wrap justify-center items-center gap-8 opacity-70">
-                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10">  <img src="logo.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
-                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10"><img src="logo1.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
-                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10"><img src="logo2.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
-                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10"><img src="logo3.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
-                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10"><img src="logo4.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
-                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10"><img src="logo5.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
-                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10"><img src="logo6.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
-                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10"><img src="logo9.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
-                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10"><img src="logo10.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
-                </div>
+                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10 overflow-hidden"><img src="logo.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
+                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10 overflow-hidden"><img src="logo1.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
+                    <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-c0 overflow-hidden"><img src="logo2.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
+                  <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-c0 overflow-hidden"><img src="logo2.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
+                  <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-c0 overflow-hidden"><img src="logo3.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
+                  <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-c0 overflow-hidden"><img src="logo4.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
+                  <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-c0 overflow-hidden"><img src="logo5.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
+                  <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-c0 overflow-hidden"><img src="logo6.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
+                  <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-c0 overflow-hidden"><img src="logo9.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
+                  <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-c0 overflow-hidden"><img src="logo10.jpeg" alt="Cinema Background" class="w-full h-full object-cover"></div>
             </div>
+        </div>
+    </section>
+
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-900/40 via-transparent to-rose-900/40"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <div class="inline-block p-4 rounded-full bg-yellow-500/10 mb-6 animate-bounce border border-yellow-500/30">
+                <i data-lucide="crown" class="w-12 h-12 text-yellow-400"></i>
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Concours <span class="gold-gradient">Miss Master</span></h2>
+            
+            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+                La compétition est lancée ! Qui seront sacrée Miss et Master de la soirée ?
+                Soutenez votre candidat(e) favorit(e) et participez à l'élection.
+            </p>
+            
+            <a href="https://vote-for.me/c/cine-miss-master-" target="_blank" 
+               class="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-amber-600 text-black px-10 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_30px_rgba(234,179,8,0.3)]">
+                <span>Voter Maintenant</span>
+                <i data-lucide="star" class="w-6 h-6 fill-black"></i>
+            </a>
         </div>
     </section>
 
@@ -189,7 +215,7 @@
                 <i data-lucide="hourglass" class="w-6 h-6 text-rose-500 shrink-0 mt-1"></i>
                 <div>
                     <h3 class="font-bold text-rose-400">Dernières places disponibles</h3>
-                    <p class="text-sm text-gray-400">Forte demande. Bloquez votre place maintenant.</p>
+                    <p class="text-sm text-gray-400">Forte demande pour Mahima. Bloquez votre place maintenant.</p>
                 </div>
             </div>
 
@@ -299,14 +325,15 @@
                 </div>
                 <div class="bg-slate-900/50 p-5 rounded-xl border border-white/5">
                     <h3 class="font-bold text-rose-400 text-sm mb-1">Piscine ?</h3>
-                    <p class="text-gray-400 text-xs">Oui, L'accès à la piscine payante. Prévoyez vos maillots si vous voulez vous baigner.</p>
+                    <p class="text-gray-400 text-xs">Oui ! L'accès à la piscine est Payante. Prévoyez vos maillots si vous voulez vous baigner.</p>
                 </div>
                 <div class="bg-slate-900/50 p-5 rounded-xl border border-white/5">
                     <h3 class="font-bold text-rose-400 text-sm mb-1">Paiement ?</h3>
                     <p class="text-gray-400 text-xs">Réservation gratuite aujourd'hui. Paiement possible sur place le jour de l'événement.</p>
-                </div><div class="bg-slate-900/50 p-5 rounded-xl border border-white/5">
+                </div>
+                <div class="bg-slate-900/50 p-5 rounded-xl border border-white/5">
                     <h3 class="font-bold text-rose-400 text-sm mb-1">Météo ?</h3>
-                    <p class="text-gray-400 text-xs">Saison sèche, ciel dégagé prévu. Prenez un petit pull.</p>
+                    <p class="text-gray-400 text-xs">Saison sèche, ciel dégagé prévu. Prenez un petit pull pour le soir.</p>
                 </div>
             </div>
         </div>
@@ -350,10 +377,10 @@
         let currentPack = null;
         let currentPrice = 0;
 
-        // --- COMPTEUR BOOSTÉ (+58) ---
+        // --- COMPTEUR BOOSTÉ ---
         const COUNTER_NAMESPACE = 'cine-st-valentin-2026-cameroun'; 
         const COUNTER_KEY = 'reservations';
-        const FAKE_START = 90;
+        const FAKE_START = 95;
 
         fetch(`https://api.countapi.xyz/get/${COUNTER_NAMESPACE}/${COUNTER_KEY}`)
             .then(res => res.json())
@@ -398,7 +425,7 @@
 
             const refID = "RES-" + Math.random().toString(36).substr(2, 5).toUpperCase();
             const ADMIN_NUM = "237658980051";
-            let msg = `*🚨 NOUVELLE RÉSERVATION*\n`;
+            let msg = `*🚨 NOUVELLE RÉSERVATION *\n`;
             msg += `-----------------------------\n`;
             msg += `📝 *REF:* ${refID}\n`;
             msg += `👤 *Nom:* ${nom}\n`;
