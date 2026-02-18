@@ -3,341 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E.l des Dames - Miss & Ciné 2026</title>
+    <title>E.l des Dames - 8 Mars 2026 | Hôtel Njenka</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050205; color: #f3f4f6; }
-        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
-        
-        /* Effet Doré */
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(234, 179, 8, 0); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        .animate-pulse-gold {
+            animation: pulse-gold 2s infinite;
+        }
         .gold-text {
             background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gold-border { border-color: #b38728; }
-        .bg-gold { background: linear-gradient(to right, #bf953f, #b38728); }
-        
-        /* Animations */
-        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
-        .floating { animation: float 3s ease-in-out infinite; }
+        .gold-border {
+            border-image: linear-gradient(to right, #bf953f, #fcf6ba, #b38728) 1;
+        }
+        .glass-effect {
+            background: rgba(20, 10, 20, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
     </style>
 </head>
-<body class="relative overflow-x-hidden">
+<body class="bg-[#050205] text-white font-sans selection:bg-yellow-500 selection:text-black">
 
-    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0 font-serif text-2xl font-bold text-white tracking-wider">
-                    E.l <span class="text-yellow-500 text-sm">des dames</span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#concept" class="hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition">Concept</a>
-                        <a href="#miss" class="hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition">Concours Miss</a>
-                        <a href="#candidates" class="hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition">Candidates</a>
-                        <a href="#tickets" class="bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-full text-sm font-bold transition">🎟 Billetterie</a>
-                    </div>
-                </div>
-                <div class="-mr-2 flex md:hidden">
-                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-gray-400 hover:text-white p-2">
-                        <i data-lucide="menu" class="w-8 h-8"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="hidden md:hidden bg-black border-b border-gray-800" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
-                <a href="#miss" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">Miss 2026</a>
-                <a href="#tickets" class="block px-3 py-2 rounded-md text-base font-medium text-rose-500">Acheter un Billet</a>
-                <a href="#vote" class="block px-3 py-2 rounded-md text-base font-medium text-yellow-500">Voter</a>
-            </div>
-        </div>
-    </nav>
+    <a href="https://www.google.com/maps/search/?api=1&query=Hôtel+Njenka+Ahala+Yaoundé" target="_blank" 
+       class="bg-gradient-to-r from-slate-900 via-black to-slate-900 text-yellow-100 text-xs font-bold text-center py-3 border-b border-yellow-900/30 flex items-center justify-center gap-2 sticky top-0 z-50 shadow-lg hover:text-yellow-400 transition-colors cursor-pointer">
+        <i data-lucide="map-pin" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+        <span>Lieu confirmé : <span class="uppercase tracking-widest font-extrabold underline decoration-yellow-500/50">HÔTEL NJENKA (AHALA)</span></span>
+        <i data-lucide="external-link" class="w-3 h-3 opacity-70"></i>
+    </a>
 
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+    <header class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 pb-10 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-rose-900/30 rounded-full blur-[100px]"></div>
-            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-900/20 rounded-full blur-[100px]"></div>
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050205] via-[#050205]/80 to-purple-900/20"></div>
         </div>
 
-        <div class="relative z-10 max-w-4xl mx-auto space-y-6">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm mb-4">
-                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                <span>Billetterie Ouverte</span>
-            </div>
-            
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-                Célébrez l'élégance <br>
-                <span class="gold-text">E.l des Dames</span>
-            </h1>
-            
-            <p class="text-xl md:text-2xl text-gray-300 font-light italic">
-                "Plus qu'une soirée, un sacre."
-            </p>
-
-            <div class="flex flex-col md:flex-row items-center justify-center gap-4 py-4 text-gray-400 text-sm uppercase tracking-widest">
-                <div class="flex items-center gap-2"><i data-lucide="calendar" class="text-rose-500"></i> 08 Mars 2026</div>
-                <span class="hidden md:block text-gray-600">•</span>
-                <div class="flex items-center gap-2"><i data-lucide="map-pin" class="text-rose-500"></i> Hôtel Njenka (Ahala)</div>
+        <div class="relative z-10 max-w-5xl w-full mt-10 flex flex-col items-center animate-fade-in">
+            <div class="mb-6">
+                <i data-lucide="crown" class="w-16 h-16 text-yellow-500 mx-auto mb-4 drop-shadow-[0_0_15px_rgba(234,179,8,0.5)]"></i>
+                <h1 class="text-6xl md:text-8xl font-extrabold mb-2 gold-text tracking-tighter">
+                    E.l des Dames
+                </h1>
+                <p class="text-sm md:text-lg text-gray-300 tracking-[0.3em] uppercase opacity-80">En l'honneur des dames</p>
             </div>
 
-            <div class="grid grid-cols-4 gap-4 max-w-lg mx-auto py-6" id="countdown">
-                </div>
+            <div class="flex items-center gap-4 bg-white/5 border border-yellow-500/20 px-6 py-3 rounded-full backdrop-blur-md mb-8">
+                <i data-lucide="calendar" class="text-yellow-500"></i>
+                <span class="text-xl font-bold">DIMANCHE 08 MARS 2026</span>
+            </div>
 
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                <a href="#tickets" class="px-8 py-4 bg-gradient-to-r from-rose-600 to-pink-600 rounded-full font-bold text-lg shadow-lg shadow-rose-900/50 hover:scale-105 transition transform flex items-center justify-center gap-2">
-                    <i data-lucide="ticket"></i> Acheter mon Billet
-                </a>
-                <a href="#candidates" class="px-8 py-4 border border-yellow-500 text-yellow-500 rounded-full font-bold text-lg hover:bg-yellow-500/10 transition flex items-center justify-center gap-2">
-                    <i data-lucide="crown"></i> Voir les Miss
+            <div class="flex justify-center gap-4 mb-10 text-center" id="countdown"></div>
+
+            <div class="flex flex-col md:flex-row gap-5 w-full justify-center items-center">
+                <button onclick="openBookingModal()" class="group relative inline-flex items-center gap-3 bg-gradient-to-r from-yellow-600 to-yellow-500 text-black px-10 py-5 rounded-full font-bold text-xl shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:scale-105 transition-transform">
+                    <span>Réserver mon Pass</span>
+                    <i data-lucide="ticket" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
+                </button>
+                
+                <a href="https://www.vote-for.me/c/miss-el-des-dames-/voter" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/20 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-colors backdrop-blur-sm">
+                    <span>Voir les Miss</span>
+                    <i data-lucide="star" class="w-5 h-5 text-yellow-500"></i>
                 </a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section id="miss" class="py-20 bg-white/5 relative">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-5xl font-serif mb-12 gold-text">Le Trône Miss Master</h2>
+    <section class="py-24 relative overflow-hidden bg-[#0a050a]">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-600/10 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 flex flex-col items-center gap-2">
+                <span class="text-sm font-normal text-yellow-500 uppercase tracking-widest">Compétition Officielle</span>
+                <span class="gold-text">Le Trône Miss Étoile 2026</span>
+            </h2>
             
-            <div class="grid md:grid-cols-3 gap-8 items-end">
-                <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl order-2 md:order-1">
-                    <div class="text-4xl mb-4">🥈</div>
-                    <h3 class="text-xl font-bold text-gray-300">1ère Dauphine</h3>
-                    <p class="text-3xl font-bold text-white mt-2">50.000 FCFA</p>
-                    <p class="text-sm text-gray-500 mt-2">+ Lots Partenaires</p>
-                </div>
+            <div class="glass-effect p-8 md:p-12 rounded-3xl border border-yellow-500/30 shadow-2xl">
+                <p class="text-xl text-gray-200 mb-8 leading-relaxed font-light">
+                    "Votez pour celle qui incarne l'élégance. Chaque vote compte.<br>
+                    Les votes sont sécurisés et payants pour garantir l'équité."
+                </p>
 
-                <div class="bg-gradient-to-b from-gray-800 to-black border border-yellow-500/50 p-8 rounded-2xl transform md:-translate-y-4 shadow-2xl shadow-yellow-900/20 order-1 md:order-2 relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-2 bg-yellow-500"></div>
-                    <div class="text-6xl mb-4 floating">👑</div>
-                    <h3 class="text-2xl font-bold text-yellow-400 uppercase tracking-widest">Miss Master 2026</h3>
-                    <p class="text-5xl font-bold text-white mt-4">100.000 FCFA</p>
-                    <p class="text-sm text-yellow-200/70 mt-4">Le titre suprême + Cadeaux Blue Energy</p>
-                    <a href="#" class="inline-block mt-6 text-xs text-gray-400 hover:text-white underline">Télécharger le règlement (PDF)</a>
-                </div>
-
-                <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl order-3">
-                    <div class="text-4xl mb-4">🥉</div>
-                    <h3 class="text-xl font-bold text-gray-300">2ème Dauphine</h3>
-                    <p class="text-3xl font-bold text-white mt-2">30.000 FCFA</p>
-                    <p class="text-sm text-gray-500 mt-2">+ Lots Partenaires</p>
+                <div class="flex flex-col items-center gap-4">
+                    <a href="https://www.vote-for.me/c/miss-el-des-dames-/voter" target="_blank" 
+                       class="animate-pulse-gold inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-600 text-black px-12 py-6 rounded-full font-extrabold text-2xl hover:brightness-110 transition-all transform hover:-translate-y-1 shadow-lg">
+                        <span>VOTER MAINTENANT</span>
+                        <i data-lucide="crown" class="w-8 h-8 fill-black"></i>
+                    </a>
+                    <p class="text-xs text-gray-500 mt-2">Redirection sécurisée vers la plateforme de vote</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="candidates" class="py-20">
-        <div class="max-w-7xl mx-auto px-4">
+    <section class="py-20 bg-gradient-to-b from-[#0a050a] to-[#050205] border-y border-yellow-900/20">
+        <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-serif mb-4">Les Candidates</h2>
-                <p class="text-gray-400">Votez pour celle qui incarne l'élégance. Chaque vote compte.</p>
-                <div class="mt-4 inline-block bg-yellow-900/30 text-yellow-400 px-4 py-2 rounded border border-yellow-600/30 text-sm">
-                    <i data-lucide="info" class="inline w-4 h-4"></i> Les votes sont sécurisés et payants pour garantir l'équité.
+                <span class="text-blue-400 font-bold tracking-[0.3em] uppercase text-xs">Partenaire Majeur</span>
+                <h2 class="text-4xl font-extrabold text-white mt-2">SPONSOR <span class="text-blue-500">OFFICIEL</span></h2>
+            </div>
+
+            <div class="bg-slate-900/50 rounded-3xl p-8 border border-blue-500/30 flex flex-col md:flex-row items-center gap-10 max-w-4xl mx-auto hover:border-blue-500/60 transition-colors">
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="w-40 h-40 bg-black rounded-2xl flex items-center justify-center border border-slate-700">
+                         <span class="text-blue-500 font-bold text-center">LOGO<br>BLUE ENERGY</span>
+                         </div>
+                </div>
+                <div class="w-full md:w-2/3 text-center md:text-left space-y-4">
+                    <h3 class="text-2xl font-bold text-white">BLUE ENERGY</h3>
+                    <p class="text-gray-400">
+                        L'énergie qui propulse l'élégance. Soutien officiel de la femme camerounaise et du concours Miss Étoile 2026.
+                    </p>
+                    <a href="https://blue-energy-store.vercel.app" target="_blank" 
+                       class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-bold transition-all shadow-lg shadow-blue-900/20">
+                        <span>Visiter le Site Officiel</span>
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="group relative overflow-hidden rounded-xl bg-gray-900 border border-white/10">
-                    <div class="aspect-[3/4] bg-gray-800 relative">
-                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80" alt="Candidate" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition duration-500">
-                        <div class="absolute top-2 left-2 bg-black/70 px-2 py-1 rounded text-xs font-bold text-white">#01</div>
-                    </div>
-                    <div class="p-4 text-center">
-                        <h3 class="text-lg font-serif font-bold text-white">Sarah M.</h3>
-                        <p class="text-xs text-gray-500 mb-3 line-clamp-2">"Je veux inspirer les jeunes femmes à oser être elles-mêmes."</p>
-                        <a href="https://vote-for.me/c/cine-miss-master-" target="_blank" class="block w-full py-2 bg-white/10 hover:bg-yellow-600 hover:text-white text-yellow-500 text-sm font-bold rounded transition">
-                            Voter pour elle
-                        </a>
-                    </div>
-                </div>
-
-                <div class="group relative overflow-hidden rounded-xl bg-gray-900 border border-white/10">
-                    <div class="aspect-[3/4] bg-gray-800 relative">
-                        <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?auto=format&fit=crop&q=80" alt="Candidate" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition duration-500">
-                        <div class="absolute top-2 left-2 bg-black/70 px-2 py-1 rounded text-xs font-bold text-white">#02</div>
-                    </div>
-                    <div class="p-4 text-center">
-                        <h3 class="text-lg font-serif font-bold text-white">Jessica K.</h3>
-                        <p class="text-xs text-gray-500 mb-3 line-clamp-2">"L'élégance est une attitude."</p>
-                        <a href="https://vote-for.me/c/cine-miss-master-" target="_blank" class="block w-full py-2 bg-white/10 hover:bg-yellow-600 hover:text-white text-yellow-500 text-sm font-bold rounded transition">
-                            Voter pour elle
-                        </a>
-                    </div>
-                </div>
-
-                <div class="group relative overflow-hidden rounded-xl bg-gray-900 border border-white/10">
-                    <div class="aspect-[3/4] bg-gray-800 relative">
-                        <img src="https://images.unsplash.com/photo-1616766098956-c81f12114571?auto=format&fit=crop&q=80" alt="Candidate" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition duration-500">
-                        <div class="absolute top-2 left-2 bg-black/70 px-2 py-1 rounded text-xs font-bold text-white">#03</div>
-                    </div>
-                    <div class="p-4 text-center">
-                        <h3 class="text-lg font-serif font-bold text-white">Brenda T.</h3>
-                        <p class="text-xs text-gray-500 mb-3 line-clamp-2">"Passionnée de mode et de culture."</p>
-                        <a href="https://vote-for.me/c/cine-miss-master-" target="_blank" class="block w-full py-2 bg-white/10 hover:bg-yellow-600 hover:text-white text-yellow-500 text-sm font-bold rounded transition">
-                            Voter pour elle
-                        </a>
-                    </div>
-                </div>
-                 <div class="flex flex-col items-center justify-center border-2 border-dashed border-gray-800 rounded-xl p-6 text-gray-600">
-                    <i data-lucide="user-plus" class="w-12 h-12 mb-2"></i>
-                    <span class="text-sm">Inscriptions en cours</span>
-                </div>
-            </div>
-            
-            <div class="text-center mt-10">
-                <a href="https://vote-for.me/c/cine-miss-master-" class="inline-flex items-center gap-2 text-rose-500 hover:text-rose-400 font-bold border-b border-rose-500 pb-1">
-                    Voir le classement en direct <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            <div class="mt-16 text-center">
+                <p class="text-gray-500 text-sm mb-4">Vous souhaitez associer votre image à cet événement de prestige ?</p>
+                <a href="https://wa.me/237658980051?text=Bonjour%2C%20je%20souhaite%20devenir%20sponsor%20ou%20partenaire%20de%20l'%C3%A9v%C3%A9nement%20E.l%20des%20Dames%20(8%20Mars)." target="_blank"
+                   class="inline-flex items-center gap-2 text-yellow-500 border border-yellow-500/30 px-6 py-2 rounded-full hover:bg-yellow-500/10 transition-colors text-sm font-semibold">
+                    <span>Devenir Sponsor +</span>
+                    <i data-lucide="plus-circle" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-gray-900/50">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-serif text-center mb-12">Le Programme</h2>
-            <div class="space-y-6 relative border-l-2 border-gray-800 ml-4 md:ml-0">
-                <div class="md:flex items-center gap-6 relative pl-8 md:pl-0">
-                    <div class="hidden md:block w-24 text-right text-rose-500 font-bold">16:00</div>
-                    <div class="absolute -left-[9px] md:left-24 w-4 h-4 bg-rose-500 rounded-full border-4 border-black"></div>
-                    <div class="flex-1 bg-black p-4 rounded-xl border border-gray-800">
-                        <h3 class="font-bold text-white flex items-center gap-2"><i data-lucide="camera" class="w-4 h-4"></i> Tapis Rouge & Photos</h3>
-                        <p class="text-gray-400 text-sm">Accueil des invités, cocktail de bienvenue.</p>
-                    </div>
-                </div>
-                <div class="md:flex items-center gap-6 relative pl-8 md:pl-0">
-                    <div class="hidden md:block w-24 text-right text-rose-500 font-bold">18:00</div>
-                    <div class="absolute -left-[9px] md:left-24 w-4 h-4 bg-yellow-500 rounded-full border-4 border-black"></div>
-                    <div class="flex-1 bg-black p-4 rounded-xl border border-gray-800">
-                        <h3 class="font-bold text-white flex items-center gap-2"><i data-lucide="mic" class="w-4 h-4"></i> Début du Show & Karaoké</h3>
-                        <p class="text-gray-400 text-sm">Animations, artistes invités et premier passage des Miss.</p>
-                    </div>
-                </div>
-                <div class="md:flex items-center gap-6 relative pl-8 md:pl-0">
-                    <div class="hidden md:block w-24 text-right text-rose-500 font-bold">20:00</div>
-                    <div class="absolute -left-[9px] md:left-24 w-4 h-4 bg-rose-500 rounded-full border-4 border-black"></div>
-                    <div class="flex-1 bg-black p-4 rounded-xl border border-gray-800">
-                        <h3 class="font-bold text-white flex items-center gap-2"><i data-lucide="film" class="w-4 h-4"></i> Ciné Sous Les Étoiles</h3>
-                        <p class="text-gray-400 text-sm">Projection du film romantique sur écran géant.</p>
-                    </div>
-                </div>
-                 <div class="md:flex items-center gap-6 relative pl-8 md:pl-0">
-                    <div class="hidden md:block w-24 text-right text-rose-500 font-bold">22:00</div>
-                    <div class="absolute -left-[9px] md:left-24 w-4 h-4 bg-yellow-500 rounded-full border-4 border-black"></div>
-                    <div class="flex-1 bg-black p-4 rounded-xl border border-gray-800 border-l-4 border-l-yellow-500">
-                        <h3 class="font-bold text-white flex items-center gap-2"><i data-lucide="crown" class="w-4 h-4"></i> Couronnement Miss 2026</h3>
-                        <p class="text-gray-400 text-sm">Le verdict final et remise des prix.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tickets" class="py-20 relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-rose-900/10 rounded-full blur-[120px]"></div>
-
-        <div class="max-w-7xl mx-auto px-4 relative z-10">
-            <h2 class="text-3xl md:text-5xl font-serif text-center mb-4">Réservez votre Place</h2>
-            <p class="text-center text-gray-400 mb-12">Les places sont limitées. Paiement simple par Mobile Money.</p>
-
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-gray-900/80 backdrop-blur border border-gray-700 rounded-2xl p-8 hover:border-rose-500 transition duration-300">
-                    <h3 class="text-xl font-bold text-gray-300 uppercase tracking-widest mb-2">Solo / Standard</h3>
-                    <div class="text-4xl font-bold text-white mb-4">1 500 <span class="text-lg font-normal text-gray-500">FCFA</span></div>
-                    <ul class="space-y-3 mb-8 text-gray-400 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> Accès à l'événement</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> Place Cinéma</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> 1 Conso Offerte (Jus/Bière)</li>
-                    </ul>
-                    <a href="https://wa.me/237658980051?text=Bonjour,%20je%20veux%20acheter%20un%20ticket%20SIMPLE%20pour%20E.l%20des%20dames" class="block w-full py-4 text-center rounded-xl bg-white text-black font-bold hover:bg-gray-200 transition">
-                        Acheter maintenant
-                    </a>
-                </div>
-
-                <div class="bg-gradient-to-b from-gray-800 to-black border border-yellow-500/30 rounded-2xl p-8 transform md:scale-105 shadow-2xl relative">
-                    <div class="absolute top-0 right-0 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAIRE</div>
-                    <h3 class="text-xl font-bold text-yellow-400 uppercase tracking-widest mb-2">Pass Couple</h3>
-                    <div class="text-4xl font-bold text-white mb-4">2 500 <span class="text-lg font-normal text-gray-500">FCFA</span></div>
-                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-yellow-500 w-4 h-4"></i> Entrée pour 2 personnes</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-yellow-500 w-4 h-4"></i> Place Cinéma Duo</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-yellow-500 w-4 h-4"></i> 2 Consos Offertes</li>
-                        <li class="flex items-center gap-2"><i data-lucide="star" class="text-yellow-500 w-4 h-4"></i> Accès prioritaire</li>
-                    </ul>
-                    <a href="https://wa.me/237658980051?text=Bonjour,%20je%20veux%20acheter%20un%20Pass%20COUPLE%20pour%20E.l%20des%20dames" class="block w-full py-4 text-center rounded-xl bg-gradient-to-r from-rose-600 to-pink-600 text-white font-bold hover:brightness-110 transition shadow-lg shadow-rose-900/50">
-                        Acheter Pass Couple
-                    </a>
-                </div>
+    <footer class="py-12 bg-black border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col items-center gap-6">
+            
+            <div class="flex gap-6">
+                <a href="https://www.tiktok.com/@el.des.dames?_r=1&_t=ZS-940ZP18WIuP" target="_blank" class="group bg-slate-900 p-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 border border-white/10">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/share/1C2ZoTmJUx/?mibextid=wwXIfr" target="_blank" class="group bg-slate-900 p-3 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 border border-white/10">
+                    <i data-lucide="facebook" class="w-6 h-6"></i>
+                </a>
             </div>
 
-            <div class="flex justify-center gap-6 mt-12 opacity-50 grayscale hover:grayscale-0 transition">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Orange_Money_logo_2017.png" alt="Orange Money" class="h-10 bg-white rounded p-1">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/MTN_Mobile_Money_logo.svg/1200px-MTN_Mobile_Money_logo.svg.png" alt="MOMO" class="h-10 bg-white rounded p-1">
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-sm text-gray-500 mb-6 uppercase tracking-widest">Sponsors Officiels</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-                <div class="text-xl font-bold text-gray-400">BLUE ENERGY</div>
-                <div class="text-xl font-bold text-gray-400">MAHIMA</div>
-                <div class="text-xl font-bold text-gray-400">HOTEL NJENKA</div>
-                <div class="text-xl font-bold text-gray-600 border border-gray-700 px-4 py-2 rounded border-dashed text-sm">
-                    <a href="https://wa.me/237658980051">Devenir Sponsor +</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-black py-10 border-t border-white/10 text-center md:text-left">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-                <h4 class="font-serif text-xl font-bold mb-2">E.l des Dames</h4>
-                <p class="text-xs text-gray-500">© 2026 Tous droits réservés.</p>
-            </div>
-            <div class="flex gap-4">
-                <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="facebook"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="instagram"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="twitter"></i></a>
+            <div class="text-center text-gray-500 text-xs">
+                <p class="mb-2">E.l des Dames • 08 Mars 2026 • Hôtel Njenka (Ahala)</p>
+                <p>Powered by Blue Energy</p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/237658980051" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg shadow-green-900/50 hover:scale-110 transition z-50 flex items-center gap-2">
-        <i data-lucide="message-circle" class="w-6 h-6"></i>
-        <span class="hidden md:inline font-bold">Nous contacter</span>
-    </a>
+    <div id="bookingModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-[#1a151a] w-full max-w-lg rounded-3xl border border-yellow-500/20 shadow-2xl relative overflow-hidden">
+            <div class="bg-gradient-to-r from-yellow-900/20 to-transparent p-6 border-b border-white/5 flex justify-between items-center">
+                <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i data-lucide="ticket" class="text-yellow-500"></i> Billetterie
+                </h3>
+                <button onclick="closeBookingModal()" class="text-gray-400 hover:text-white transition-colors">
+                    <i data-lucide="x-circle" class="w-8 h-8"></i>
+                </button>
+            </div>
+
+            <div class="p-6 md:p-8 space-y-6">
+                <p class="text-gray-400 text-sm">Réservez votre place pour la soirée de gala. Paiement sécurisé via Mobile Money (après validation).</p>
+                
+                <form id="ticketForm" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div onclick="selectPack('SOLO', 5000)" id="pack-SOLO" class="pack-item cursor-pointer bg-slate-900 border border-slate-700 p-4 rounded-xl text-center hover:border-yellow-500 transition-all">
+                            <div class="text-gray-400 text-xs uppercase font-bold mb-1">Pass Solo</div>
+                            <div class="text-xl font-bold text-yellow-500">5 000 XAF</div>
+                        </div>
+                        <div onclick="selectPack('DUO', 9000)" id="pack-DUO" class="pack-item cursor-pointer bg-slate-900 border border-slate-700 p-4 rounded-xl text-center hover:border-yellow-500 transition-all">
+                            <div class="text-gray-400 text-xs uppercase font-bold mb-1">Pass Duo</div>
+                            <div class="text-xl font-bold text-yellow-500">9 000 XAF</div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <input type="text" id="nom" placeholder="Votre Nom Complet" class="w-full bg-black border border-slate-700 rounded-lg p-3 text-white focus:border-yellow-500 outline-none">
+                        <input type="tel" id="tel" placeholder="Numéro WhatsApp" class="w-full bg-black border border-slate-700 rounded-lg p-3 text-white focus:border-yellow-500 outline-none">
+                    </div>
+
+                    <button type="button" onclick="submitTicket()" class="w-full bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-4 rounded-xl text-lg flex items-center justify-center gap-2 transition-colors">
+                        <span>Commander mon Ticket</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script>
         lucide.createIcons();
+        let currentPack = null;
+        let currentPrice = 0;
 
-        // Compte à rebours
-        const eventDate = new Date("March 8, 2026 16:00:00").getTime();
-        const countdownEl = document.getElementById("countdown");
+        // --- GESTION DU MODAL ---
+        function openBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.remove('hidden');
+            // Petit délai pour l'animation d'opacité
+            setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
+        }
 
-        const updateCountdown = () => {
+        function closeBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => { modal.classList.add('hidden'); }, 300);
+        }
+
+        // --- SELECTION PACK ---
+        function selectPack(pack, price) {
+            currentPack = pack;
+            currentPrice = price;
+            // Reset styles
+            document.querySelectorAll('.pack-item').forEach(el => {
+                el.classList.remove('border-yellow-500', 'bg-yellow-500/10');
+                el.classList.add('border-slate-700', 'bg-slate-900');
+            });
+            // Highlight selected
+            const selected = document.getElementById('pack-' + pack);
+            selected.classList.remove('border-slate-700', 'bg-slate-900');
+            selected.classList.add('border-yellow-500', 'bg-yellow-500/10');
+        }
+
+        // --- ENVOI WHATSAPP ---
+        function submitTicket() {
+            const nom = document.getElementById('nom').value;
+            const tel = document.getElementById('tel').value;
+
+            if (!nom || !tel || !currentPack) {
+                alert("Merci de choisir un Pass et de remplir vos infos.");
+                return;
+            }
+
+            const ADMIN_NUM = "237658980051"; // Ton numéro
+            const refID = "TICKET-" + Math.random().toString(36).substr(2, 5).toUpperCase();
+
+            let msg = `*🎫 COMMANDE BILLETTERIE (E.l des Dames)*\n`;
+            msg += `-----------------------------\n`;
+            msg += `👤 *Nom:* ${nom}\n`;
+            msg += `📞 *Tel:* ${tel}\n`;
+            msg += `🎟 *Formule:* PASS ${currentPack}\n`;
+            msg += `💰 *Prix:* ${currentPrice} FCFA\n`;
+            msg += `📍 *Lieu:* Hôtel Njenka\n`;
+            msg += `-----------------------------\n`;
+            msg += `Je souhaite finaliser ma commande.`;
+
+            const link = `https://wa.me/${ADMIN_NUM}?text=${encodeURIComponent(msg)}`;
+            window.open(link, '_blank');
+            closeBookingModal();
+        }
+
+        // --- COMPTEUR A REBOURS (8 Mars 2026) ---
+        const eventDate = new Date("Mar 08, 2026 18:00:00").getTime();
+        setInterval(() => {
             const now = new Date().getTime();
             const distance = eventDate - now;
-
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            countdownEl.innerHTML = `
-                <div class="flex flex-col items-center bg-gray-800/50 p-2 rounded-lg border border-white/5"><span class="text-2xl md:text-3xl font-bold text-white">${days}</span><span class="text-[10px] text-gray-400 uppercase">Jours</span></div>
-                <div class="flex flex-col items-center bg-gray-800/50 p-2 rounded-lg border border-white/5"><span class="text-2xl md:text-3xl font-bold text-white">${hours}</span><span class="text-[10px] text-gray-400 uppercase">Heures</span></div>
-                <div class="flex flex-col items-center bg-gray-800/50 p-2 rounded-lg border border-white/5"><span class="text-2xl md:text-3xl font-bold text-white">${minutes}</span><span class="text-[10px] text-gray-400 uppercase">Min</span></div>
-                <div class="flex flex-col items-center bg-gray-800/50 p-2 rounded-lg border border-white/5"><span class="text-2xl md:text-3xl font-bold text-rose-500">${seconds}</span><span class="text-[10px] text-gray-400 uppercase">Sec</span></div>
+            
+            const html = `
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl md:text-4xl font-bold text-yellow-500">${days}</span>
+                    <span class="text-[10px] uppercase text-gray-500 tracking-widest">Jours</span>
+                </div>
+                <div class="text-2xl text-gray-700 mx-2">:</div>
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl md:text-4xl font-bold text-yellow-500">${hours}</span>
+                    <span class="text-[10px] uppercase text-gray-500 tracking-widest">Heures</span>
+                </div>
             `;
-        };
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+            document.getElementById('countdown').innerHTML = html;
+        }, 1000);
     </script>
 </body>
 </html>
